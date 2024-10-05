@@ -13,13 +13,13 @@ position = Vector2(0, -1)
 script = ExtResource("1_4j1df")
 
 [node name="LittleGuy" parent="." instance=ExtResource("2_mduso")]
-position = Vector2(11, -4)
 collision_layer = 2
 collision_mask = 2
 
 [node name="BoxBody" type="RigidBody2D" parent="."]
 input_pickable = true
 can_sleep = false
+linear_damp = 2.0
 script = ExtResource("3_nclh8")
 
 [node name="InteriorWalls" type="RigidBody2D" parent="BoxBody"]
@@ -29,19 +29,17 @@ mass = 0.001
 freeze = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BoxBody/InteriorWalls"]
-position = Vector2(-0.226289, 0)
-scale = Vector2(1.01293, 1)
+position = Vector2(-19.1034, 0)
+scale = Vector2(1.03448, 1)
 build_mode = 1
 polygon = PackedVector2Array(-26, -28, -26, 29, 61, 29, 61, -28)
 
 [node name="Sprite2D" type="Sprite2D" parent="BoxBody"]
-position = Vector2(17.5, 0)
+position = Vector2(-1, 0)
 scale = Vector2(1.54688, 1)
 texture = ExtResource("1_05c8d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BoxBody"]
-visible = false
-position = Vector2(17, 0)
 shape = SubResource("RectangleShape2D_ulo46")
 
 [connection signal="MouseEntered" from="BoxBody" to="BoxBody" method="_on_mouse_entered"]
