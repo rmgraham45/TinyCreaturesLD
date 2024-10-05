@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0rwphcs8fvbm"]
+
+[ext_resource type="Texture2D" uid="uid://cwj6v3jx2gqs" path="res://BasicCubeShape.png" id="1_05c8d"]
+[ext_resource type="Script" path="res://BasicCube.cs" id="1_wmxpc"]
+[ext_resource type="PackedScene" uid="uid://bkk25q5vf15ry" path="res://LittleGuy.tscn" id="2_mduso"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ulo46"]
+size = Vector2(97, 63)
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(0, -1)
+script = ExtResource("1_wmxpc")
+
+[node name="LittleGuy" parent="." instance=ExtResource("2_mduso")]
+position = Vector2(11, -4)
+collision_layer = 2
+collision_mask = 2
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+input_pickable = true
+
+[node name="InteriorWalls" type="RigidBody2D" parent="RigidBody2D"]
+collision_layer = 2
+collision_mask = 2
+mass = 0.001
+freeze = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D/InteriorWalls"]
+position = Vector2(-0.226289, 0)
+scale = Vector2(1.01293, 1)
+build_mode = 1
+polygon = PackedVector2Array(-26, -28, -26, 29, 61, 29, 61, -28)
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(17.5, 0)
+scale = Vector2(1.54688, 1)
+texture = ExtResource("1_05c8d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+visible = false
+position = Vector2(17, 0)
+shape = SubResource("RectangleShape2D_ulo46")
+
+[connection signal="mouse_entered" from="RigidBody2D" to="." method="_on_rigid_body_2d_mouse_entered"]
+[connection signal="mouse_exited" from="RigidBody2D" to="." method="_on_rigid_body_2d_mouse_exited"]

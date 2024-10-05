@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx45nj4qxm5ok"]
+
+[ext_resource type="Texture2D" uid="uid://cwj6v3jx2gqs" path="res://BasicCubeShape.png" id="1_smuuc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvir5"]
+size = Vector2(260, 249)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+input_pickable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(120, 114.5)
+shape = SubResource("RectangleShape2D_cvir5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(123, 119)
+scale = Vector2(3.78125, 3.625)
+texture = ExtResource("1_smuuc")

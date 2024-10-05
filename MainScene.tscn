@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://ca60papuybqx7"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_nbq3w"]
+script/source = "using Godot;
+using System;
+
+public partial class MainScene : Node2D
+{
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+		GD.Print(\"why\");
+		//SceneManager.Instance.AddScene(\"res://MainScene.tscn\");
+
+		Node sceneTest = GD.Load<PackedScene>(\"res://MainScene.tscn\").Instantiate();
+		this.AddChild(sceneTest);
+	}
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+	}
+}
+"
+
+[node name="Node2D" type="Node2D"]
+script = SubResource("CSharpScript_nbq3w")
