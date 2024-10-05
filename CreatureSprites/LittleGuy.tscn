@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bkk25q5vf15ry"]
 
-[ext_resource type="Texture2D" uid="uid://0va4ngi7751x" path="res://lilguy.png" id="1_8obsq"]
+[ext_resource type="Texture2D" uid="uid://dd4oudbil07w1" path="res://CreatureSprites/lilguy.png" id="1_8obsq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_paajy"]
 animations = [{
