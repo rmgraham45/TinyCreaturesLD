@@ -1,15 +1,15 @@
 [gd_scene load_steps=5 format=3 uid="uid://c0rwphcs8fvbm"]
 
-[ext_resource type="Texture2D" uid="uid://cwj6v3jx2gqs" path="res://BasicCubeShape.png" id="1_05c8d"]
-[ext_resource type="Script" path="res://BasicCube.cs" id="1_wmxpc"]
-[ext_resource type="PackedScene" uid="uid://bkk25q5vf15ry" path="res://LittleGuy.tscn" id="2_mduso"]
+[ext_resource type="Script" path="res://Cubes/BasicCube.cs" id="1_4j1df"]
+[ext_resource type="Texture2D" uid="uid://cus8ulwoobvb2" path="res://Cubes/CubeArt/BasicCubeShape.png" id="1_05c8d"]
+[ext_resource type="PackedScene" uid="uid://bkk25q5vf15ry" path="res://CreatureSprites/LittleGuy.tscn" id="2_mduso"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ulo46"]
 size = Vector2(97, 63)
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(0, -1)
-script = ExtResource("1_wmxpc")
+script = ExtResource("1_4j1df")
 
 [node name="LittleGuy" parent="." instance=ExtResource("2_mduso")]
 position = Vector2(11, -4)

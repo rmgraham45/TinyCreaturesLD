@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0va4ngi7751x"
-path="res://.godot/imported/lilguy.png-4547387e0b1bb6c835962d7965fd1090.ctex"
+uid="uid://dd4oudbil07w1"
+path="res://.godot/imported/lilguy.png-2923d16a6d50077053d488324c3905fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://lilguy.png"
-dest_files=["res://.godot/imported/lilguy.png-4547387e0b1bb6c835962d7965fd1090.ctex"]
+source_file="res://CreatureSprites/lilguy.png"
+dest_files=["res://.godot/imported/lilguy.png-2923d16a6d50077053d488324c3905fb.ctex"]
 
 [params]
 

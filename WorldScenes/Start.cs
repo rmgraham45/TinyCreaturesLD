@@ -6,7 +6,7 @@ public partial class Start : Node2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{	
-		SceneManager.Instance.AddScene("res://Background.tscn");
+		SceneManager.Instance.AddScene("res://WorldScenes/Background.tscn");
 		
 	}
 
@@ -15,7 +15,7 @@ public partial class Start : Node2D
 	{
 		if (Input.IsActionJustPressed("Space"))
 		{
-			SceneManager.Instance.AddScene("res://BasicCube.tscn", GetGlobalMousePosition());
+			SceneManager.Instance.AddScene("res://Cubes/BasicCube.tscn", GetGlobalMousePosition());
 		}
 	}
 }

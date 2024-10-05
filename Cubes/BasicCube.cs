@@ -6,6 +6,9 @@ public partial class BasicCube : Node2D
 	[Signal]
 	public delegate void MouseEnteredEventHandler();
 
+	[Export]
+	string Color;
+
 	private bool grabbable = false;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
