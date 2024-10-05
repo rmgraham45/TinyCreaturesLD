@@ -24,6 +24,8 @@ public partial class CubePhysics : RigidBody2D
 	{
 		if (grabbable && Input.IsActionPressed("Click"))
 		{
+			RigidBody2D creature = GetParent().GetNode<RigidBody2D>("LittleGuy");
+			creature.Freeze = true;
 			var transform = GlobalTransform;
 			transform.Origin = GetGlobalMousePosition();
 			GlobalTransform = transform;
