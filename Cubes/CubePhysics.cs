@@ -18,25 +18,15 @@ public partial class CubePhysics : RigidBody2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		GD.Print(this.LinearVelocity);
+	}
+
+	public override void _IntegrateForces(PhysicsDirectBodyState2D state)
+	{
 		if (grabbable && Input.IsActionPressed("Click"))
 		{
 			var transform = GlobalTransform;
 			transform.Origin = GetGlobalMousePosition();
 			GlobalTransform = transform;
-		}
-		else if (Input.IsActionJustReleased("Click"))
-		{
-			GD.Print("erela");
-		}
-
-	}
-
-	public override void _IntegrateForces(PhysicsDirectBodyState2D state)
-	{
-		if(!grabbable && Input.IsActionJustReleased("Click"))
-		{
-			GD.Print("her");
 		}
 		/*if (grabbable && Input.IsActionPressed("Click"))
 		{
