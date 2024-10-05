@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://UI/CareModePicker.cs" id="1_bgay8"]
 [ext_resource type="Texture2D" uid="uid://cpuq5ulqeap0i" path="res://UI/ui_block_base.png" id="1_o8fpv"]
-[ext_resource type="Texture2D" uid="uid://cllom6kxrxpkh" path="res://CreatureTreatment/hand.png" id="2_18jy8"]
-[ext_resource type="Texture2D" uid="uid://pafii0fgmuet" path="res://CreatureTreatment/flakes_meat.png" id="3_j28vy"]
-[ext_resource type="Texture2D" uid="uid://df1nuu3plvohf" path="res://CreatureTreatment/flakes_veggie.png" id="4_pnfo4"]
-[ext_resource type="Texture2D" uid="uid://dhe3drdem2a8s" path="res://CreatureTreatment/trashbag.png" id="5_fybab"]
-[ext_resource type="Texture2D" uid="uid://blj3u41kyq1vo" path="res://CreatureTreatment/glock.png" id="6_gp15f"]
+[ext_resource type="Texture2D" uid="uid://d1h5l3243igce" path="res://Creature/Sprite/creature_treatment/hand.png" id="2_18jy8"]
+[ext_resource type="Texture2D" uid="uid://dmmgnuo7mfmv0" path="res://Creature/Sprite/creature_treatment/flakes_meat.png" id="3_j28vy"]
+[ext_resource type="Texture2D" uid="uid://byhiufmc51yq7" path="res://Creature/Sprite/creature_treatment/flakes_veggie.png" id="4_pnfo4"]
+[ext_resource type="Texture2D" uid="uid://dhe3drdem2a8s" path="res://Creature/Sprite/creature_treatment/trashbag.png" id="5_fybab"]
+[ext_resource type="Texture2D" uid="uid://d0y14perud4vh" path="res://Creature/Sprite/creature_treatment/glock.png" id="6_gp15f"]
 
 [node name="CareUi" type="Control" node_paths=PackedStringArray("petButton", "meatButton", "veggieButton", "trashButton", "gunButton")]
 layout_mode = 3
