@@ -1,0 +1,104 @@
+[gd_scene load_steps=8 format=3 uid="uid://d0p3bvdsxbxq7"]
+
+[ext_resource type="Script" path="res://UI/CareModePicker.cs" id="1_bgay8"]
+[ext_resource type="Texture2D" uid="uid://cpuq5ulqeap0i" path="res://UI/ui_block_base.png" id="1_o8fpv"]
+[ext_resource type="Texture2D" uid="uid://cllom6kxrxpkh" path="res://CreatureTreatment/hand.png" id="2_18jy8"]
+[ext_resource type="Texture2D" uid="uid://pafii0fgmuet" path="res://CreatureTreatment/flakes_meat.png" id="3_j28vy"]
+[ext_resource type="Texture2D" uid="uid://df1nuu3plvohf" path="res://CreatureTreatment/flakes_veggie.png" id="4_pnfo4"]
+[ext_resource type="Texture2D" uid="uid://dhe3drdem2a8s" path="res://CreatureTreatment/trashbag.png" id="5_fybab"]
+[ext_resource type="Texture2D" uid="uid://blj3u41kyq1vo" path="res://CreatureTreatment/glock.png" id="6_gp15f"]
+
+[node name="CareUi" type="Control" node_paths=PackedStringArray("petButton", "meatButton", "veggieButton", "trashButton", "gunButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bgay8")
+petButton = NodePath("PetButton")
+meatButton = NodePath("MeatButton")
+veggieButton = NodePath("VeggieButton")
+trashButton = NodePath("TrashButton")
+gunButton = NodePath("GunButton")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 1033.0
+offset_top = 9.0
+offset_right = 1141.0
+offset_bottom = 488.0
+texture = ExtResource("1_o8fpv")
+region_rect = Rect2(0, 0, 48, 48)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="PetButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1043.0
+offset_top = 18.0
+offset_right = 1131.0
+offset_bottom = 105.0
+toggle_mode = true
+text = "Pet"
+icon = ExtResource("2_18jy8")
+icon_alignment = 1
+expand_icon = true
+
+[node name="MeatButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1043.0
+offset_top = 110.0
+offset_right = 1131.0
+offset_bottom = 197.0
+toggle_mode = true
+text = "Meat"
+icon = ExtResource("3_j28vy")
+icon_alignment = 1
+expand_icon = true
+
+[node name="VeggieButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1043.0
+offset_top = 203.0
+offset_right = 1131.0
+offset_bottom = 290.0
+toggle_mode = true
+text = "Veggie"
+icon = ExtResource("4_pnfo4")
+icon_alignment = 1
+expand_icon = true
+
+[node name="TrashButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1043.0
+offset_top = 296.0
+offset_right = 1131.0
+offset_bottom = 383.0
+toggle_mode = true
+text = "Trash"
+icon = ExtResource("5_fybab")
+icon_alignment = 1
+expand_icon = true
+
+[node name="GunButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1043.0
+offset_top = 389.0
+offset_right = 1131.0
+offset_bottom = 476.0
+toggle_mode = true
+text = "Glock"
+icon = ExtResource("6_gp15f")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="PetButton" to="." method="_on_pet_button_pressed"]
+[connection signal="pressed" from="MeatButton" to="." method="_on_meat_button_pressed"]
+[connection signal="pressed" from="VeggieButton" to="." method="_on_veggie_button_pressed"]
+[connection signal="pressed" from="TrashButton" to="." method="_on_trash_button_pressed"]
+[connection signal="pressed" from="GunButton" to="." method="_on_gun_button_pressed"]

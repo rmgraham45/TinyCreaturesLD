@@ -13,7 +13,10 @@ public partial class MainScene : Node2D
 		//SceneManager.Instance.AddScene(\"res://MainScene.tscn\");
 
 		Node sceneTest = GD.Load<PackedScene>(\"res://MainScene.tscn\").Instantiate();
+		Node ui = GD.Load<PackedScene>(\"res://WorldScenes/CareUI.tscn\").Instantiate();
+
 		this.AddChild(sceneTest);
+		this.AddChild(ui);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

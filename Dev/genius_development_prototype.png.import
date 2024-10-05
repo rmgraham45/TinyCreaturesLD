@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmmgnuo7mfmv0"
-path="res://.godot/imported/flakes_meat.png-6bf52b99986771939d9cc886167c1842.ctex"
+uid="uid://cxnjiy4s4ahsw"
+path="res://.godot/imported/genius_development_prototype.png-0d1faef7bdebedff1aff68ebe5a702d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://CreatureTreatment/flakes_meat.png"
-dest_files=["res://.godot/imported/flakes_meat.png-6bf52b99986771939d9cc886167c1842.ctex"]
+source_file="res://Dev/genius_development_prototype.png"
+dest_files=["res://.godot/imported/genius_development_prototype.png-0d1faef7bdebedff1aff68ebe5a702d2.ctex"]
 
 [params]
 
