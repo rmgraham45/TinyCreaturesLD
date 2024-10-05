@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkk25q5vf15ry"]
+
+[ext_resource type="Texture2D" uid="uid://bxxs6v3evbi5l" path="res://Creature/Sprite/TwoHeadedCrab/lilguy1.png" id="1_yoxx3"]
+[ext_resource type="Texture2D" uid="uid://cp0owalxgeqh3" path="res://Creature/Sprite/TwoHeadedCrab/lilguy2.png" id="2_wwfa8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_paajy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yoxx3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wwfa8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l6ksy"]
+radius = 11.0
+
+[node name="TwoHeadedCrab" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_paajy")
+autoplay = "default"
+frame_progress = 0.0999115
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_l6ksy")

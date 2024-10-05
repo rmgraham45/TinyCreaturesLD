@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhe3drdem2a8s"
-path="res://.godot/imported/trashbag.png-3fce6f2d49d03551e87f56fa4cc62693.ctex"
+path="res://.godot/imported/trashbag.png-8e06c815574c35811ac62d2ebef0e4f8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://CreatureTreatment/trashbag.png"
-dest_files=["res://.godot/imported/trashbag.png-3fce6f2d49d03551e87f56fa4cc62693.ctex"]
+source_file="res://Creature/Sprite/creature_treatment/trashbag.png"
+dest_files=["res://.godot/imported/trashbag.png-8e06c815574c35811ac62d2ebef0e4f8.ctex"]
 
 [params]
 

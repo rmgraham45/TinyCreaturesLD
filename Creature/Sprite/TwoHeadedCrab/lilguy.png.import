@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkji7macgf6s7"
-path="res://.godot/imported/hate.png-ab19387dba3beab6eba4406488e059f1.ctex"
+uid="uid://dd4oudbil07w1"
+path="res://.godot/imported/lilguy.png-2923d16a6d50077053d488324c3905fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://CreatureTreatment/hate.png"
-dest_files=["res://.godot/imported/hate.png-ab19387dba3beab6eba4406488e059f1.ctex"]
+source_file="res://CreatureSprites/lilguy.png"
+dest_files=["res://.godot/imported/lilguy.png-2923d16a6d50077053d488324c3905fb.ctex"]
 
 [params]
 

@@ -12,8 +12,8 @@ public partial class MainScene : Node2D
 		GD.Print(\"why\");
 		//SceneManager.Instance.AddScene(\"res://MainScene.tscn\");
 
-		Node sceneTest = GD.Load<PackedScene>(\"res://MainScene.tscn\").Instantiate();
-		Node ui = GD.Load<PackedScene>(\"res://WorldScenes/CareUI.tscn\").Instantiate();
+		Node sceneTest = GD.Load<PackedScene>("res://MainScene.tscn").Instantiate();
+		Node ui = GD.Load<PackedScene>("res://WorldScenes/CareUI.tscn").Instantiate();
 
 		this.AddChild(sceneTest);
 		this.AddChild(ui);

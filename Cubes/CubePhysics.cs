@@ -24,11 +24,17 @@ public partial class CubePhysics : RigidBody2D
 	{
 		if (grabbable && Input.IsActionPressed("Click"))
 		{
-			RigidBody2D creature = GetParent().GetNode<RigidBody2D>("LittleGuy");
-			creature.Freeze = true;
 			var transform = GlobalTransform;
 			transform.Origin = GetGlobalMousePosition();
 			GlobalTransform = transform;
+
+			RigidBody2D creature = GetParent().GetNode<Node2D>("BoxBody").GetNode<Node2D>("Creature").GetChild<RigidBody2D>(0);
+			creature.SetDeferred("freeze", true);
+		}
+		else if (Input.IsActionJustReleased("Click"))
+		{
+			RigidBody2D creature = GetParent().GetNode<Node2D>("BoxBody").GetNode<Node2D>("Creature").GetChild<RigidBody2D>(0);
+			creature.SetDeferred("freeze", false);
 		}
 		/*if (grabbable && Input.IsActionPressed("Click"))
 		{

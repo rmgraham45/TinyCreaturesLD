@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dmmgnuo7mfmv0"
-path="res://.godot/imported/flakes_meat.png-6bf52b99986771939d9cc886167c1842.ctex"
+path="res://.godot/imported/flakes_meat.png-280a8a2004b81d3cec516d4fadd7135d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://CreatureTreatment/flakes_meat.png"
-dest_files=["res://.godot/imported/flakes_meat.png-6bf52b99986771939d9cc886167c1842.ctex"]
+source_file="res://Creature/Sprite/creature_treatment/flakes_meat.png"
+dest_files=["res://.godot/imported/flakes_meat.png-280a8a2004b81d3cec516d4fadd7135d.ctex"]
 
 [params]
 

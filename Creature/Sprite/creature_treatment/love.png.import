@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2qyg13up3jhb"
-path="res://.godot/imported/gold_poo.png-d14bf2bfb5455b4c19b7f611c196047b.ctex"
+uid="uid://bher6keajrrst"
+path="res://.godot/imported/love.png-ee3cff2885772340a4a99c3e8c91032e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://CreatureTreatment/gold_poo.png"
-dest_files=["res://.godot/imported/gold_poo.png-d14bf2bfb5455b4c19b7f611c196047b.ctex"]
+source_file="res://Creature/Sprite/creature_treatment/love.png"
+dest_files=["res://.godot/imported/love.png-ee3cff2885772340a4a99c3e8c91032e.ctex"]
 
 [params]
 

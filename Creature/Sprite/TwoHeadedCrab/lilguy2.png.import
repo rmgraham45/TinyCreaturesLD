@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dljhqbq3hv13m"
-path="res://.godot/imported/poo.png-8bf33386cab8f45f033ff07ad64235ba.ctex"
+uid="uid://cp0owalxgeqh3"
+path="res://.godot/imported/lilguy2.png-8cf125eede1d928c7c8b5e90518108a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://CreatureTreatment/poo.png"
-dest_files=["res://.godot/imported/poo.png-8bf33386cab8f45f033ff07ad64235ba.ctex"]
+source_file="res://Creature/Sprite/TwoHeadedCrab/lilguy2.png"
+dest_files=["res://.godot/imported/lilguy2.png-8cf125eede1d928c7c8b5e90518108a0.ctex"]
 
 [params]
 

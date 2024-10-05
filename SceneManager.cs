@@ -9,7 +9,7 @@ public partial class SceneManager : Node
 		Instance = this;
 	}
 
-	public void AddScene(string scenePath, Vector2? spawnPosition = null)
+	public Node2D AddScene(string scenePath, Vector2? spawnPosition = null, Node2D parent = null)
 	{
 		Node2D sceneToAdd = (Node2D)GD.Load<PackedScene>(scenePath).Instantiate();
 
@@ -18,7 +18,16 @@ public partial class SceneManager : Node
 			sceneToAdd.GlobalPosition = spawnPosition.Value;
 		}
 
-		Instance.AddChild(sceneToAdd, true);
+		if (parent == null)
+		{
+			Instance.AddChild(sceneToAdd, true);
+		}
+		else
+		{
+			parent.AddChild(sceneToAdd, true);
+		}
+
+		return sceneToAdd;
 	}
 
 }

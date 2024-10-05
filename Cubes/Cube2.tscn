@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cx45nj4qxm5ok"]
 
-[ext_resource type="Texture2D" uid="uid://cwj6v3jx2gqs" path="res://BasicCubeShape.png" id="1_smuuc"]
+[ext_resource type="Texture2D" uid="uid://cus8ulwoobvb2" path="res://Cubes/CubeArt/BasicCubeShape.png" id="1_smuuc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvir5"]
 size = Vector2(260, 249)

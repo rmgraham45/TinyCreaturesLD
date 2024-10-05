@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0y14perud4vh"
-path="res://.godot/imported/glock.png-fedc028cdd44d12aff0bd40db466c475.ctex"
+uid="uid://bxxs6v3evbi5l"
+path="res://.godot/imported/lilguy1.png-25cb2a78adf6071d84fd5e4add4ee359.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://CreatureTreatment/glock.png"
-dest_files=["res://.godot/imported/glock.png-fedc028cdd44d12aff0bd40db466c475.ctex"]
+source_file="res://Creature/Sprite/TwoHeadedCrab/lilguy1.png"
+dest_files=["res://.godot/imported/lilguy1.png-25cb2a78adf6071d84fd5e4add4ee359.ctex"]
 
 [params]
 
