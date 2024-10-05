@@ -18,7 +18,7 @@ public partial class SceneManager : Node
 			sceneToAdd.GlobalPosition = spawnPosition.Value;
 		}
 
-		Instance.AddChild(sceneToAdd);
+		Instance.AddChild(sceneToAdd, true);
 	}
 
 }
