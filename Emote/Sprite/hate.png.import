@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkji7macgf6s7"
-path="res://.godot/imported/hate.png-790ec1887c809e16f9da0f793ed44b2d.ctex"
+path="res://.godot/imported/hate.png-3863302da5958296421dd776d33582d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Creature/Sprite/creature_treatment/hate.png"
-dest_files=["res://.godot/imported/hate.png-790ec1887c809e16f9da0f793ed44b2d.ctex"]
+source_file="res://Emote/Sprite/hate.png"
+dest_files=["res://.godot/imported/hate.png-3863302da5958296421dd776d33582d6.ctex"]
 
 [params]
 

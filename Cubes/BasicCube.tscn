@@ -9,7 +9,6 @@
 size = Vector2(97, 63)
 
 [node name="Node2D" type="Node2D"]
-position = Vector2(0, -1)
 script = ExtResource("1_4j1df")
 
 [node name="BoxBody" type="RigidBody2D" parent="."]
@@ -38,7 +37,9 @@ texture = ExtResource("1_05c8d")
 visible = false
 shape = SubResource("RectangleShape2D_ulo46")
 
-[node name="Creature" parent="BoxBody" instance=ExtResource("4_cb0ep")]
+[node name="Creature" type="Node2D" parent="BoxBody"]
+position = Vector2(0, -4)
+script = ExtResource("4_o3pxd")
 
 [connection signal="MouseEntered" from="BoxBody" to="BoxBody" method="_on_mouse_entered"]
 [connection signal="MouseExited" from="BoxBody" to="BoxBody" method="_on_mouse_exited"]

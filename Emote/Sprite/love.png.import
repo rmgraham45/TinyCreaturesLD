@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bher6keajrrst"
-path="res://.godot/imported/love.png-ee3cff2885772340a4a99c3e8c91032e.ctex"
+path="res://.godot/imported/love.png-04e7fb6e9e767517c6d44aa09c1b3653.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Creature/Sprite/creature_treatment/love.png"
-dest_files=["res://.godot/imported/love.png-ee3cff2885772340a4a99c3e8c91032e.ctex"]
+source_file="res://Emote/Sprite/love.png"
+dest_files=["res://.godot/imported/love.png-04e7fb6e9e767517c6d44aa09c1b3653.ctex"]
 
 [params]
 
