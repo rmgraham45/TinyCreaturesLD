@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkk25q5vf15ry"]
+[gd_scene load_steps=9 format=3 uid="uid://bkk25q5vf15ry"]
 
+[ext_resource type="Script" path="res://Creature/Scene/CreatureClickSignaler.cs" id="1_ilni6"]
 [ext_resource type="Texture2D" uid="uid://bxxs6v3evbi5l" path="res://Creature/Sprite/TwoHeadedCrab/lilguy1.png" id="1_yoxx3"]
 [ext_resource type="Texture2D" uid="uid://cp0owalxgeqh3" path="res://Creature/Sprite/TwoHeadedCrab/lilguy2.png" id="2_wwfa8"]
+[ext_resource type="Texture2D" uid="uid://bher6keajrrst" path="res://Emote/Sprite/love.png" id="3_w3ro0"]
+[ext_resource type="Script" path="res://Emote/Script/Emote.cs" id="4_lfb1n"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_paajy"]
 animations = [{
@@ -20,11 +23,23 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l6ksy"]
 radius = 11.0
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_o215p"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, -15.455, 0)
+direction = Vector3(0, -0.14, 0)
+flatness = 1.0
+initial_velocity_min = 60.15
+initial_velocity_max = 60.15
+gravity = Vector3(0, 98, 0)
+
 [node name="TwoHeadedCrab" type="RigidBody2D"]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 3
+collision_mask = 3
+can_sleep = false
+script = ExtResource("1_ilni6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_paajy")
 autoplay = "default"
 frame_progress = 0.0999115
@@ -33,3 +48,14 @@ frame_progress = 0.0999115
 position = Vector2(0, 5)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_l6ksy")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_o215p")
+texture = ExtResource("3_w3ro0")
+one_shot = true
+fixed_fps = 60
+script = ExtResource("4_lfb1n")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

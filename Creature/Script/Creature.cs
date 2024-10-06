@@ -16,6 +16,7 @@ public partial class Creature : Node2D {
 	public int happiness; // 0-5
 
 	private CollisionPolygon2D bounds;
+	private CollisionObject2D collider;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
@@ -23,12 +24,14 @@ public partial class Creature : Node2D {
 		LoadScene();
 
 		bounds = GetParent().GetNode<RigidBody2D>("InteriorWalls").GetChild<CollisionPolygon2D>(0);
+		collider = GetChild<CollisionObject2D>(0);
+
+		collider.InputEvent += MouseClick;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta) {
 		// Called every frame. Delta is the elapsed time since the previous frame.
-		FixOutOfBounds();
 	}
 
 	public void LoadScene() {
@@ -36,52 +39,13 @@ public partial class Creature : Node2D {
 			Node2D instance = SceneManager.Instance.AddScene(creatureScenes[creatureType], Vector2.Zero, this);
 		}
 	}
-
-	public void FixOutOfBounds() {
-		// compare to bounds; if position is outside of bounds, move back inside. use local position
-		Vector2[] array = bounds.Polygon;
-		if (array.Length == 4) {
-			Vector2[] points = new Vector2[4];
-			for (int i = 0; i < 4; i++) {
-				points[i] = array[i];
-			}
-
-			Vector2 localPosition = GlobalPosition - bounds.GlobalPosition;
-			if (!IsPointInPolygon(localPosition, points)) {
-				Vector2 closestPoint = GetClosestPointInPolygon(localPosition, points);
-				Vector2 newPosition = bounds.GlobalPosition + closestPoint;
-				GlobalPosition = newPosition;
-			}
-		} else {
-			throw new Exception("Bounds polygon must have 4 points.");
-		}
-	}
-
-	private bool IsPointInPolygon(Vector2 point, Vector2[] polygon) {
-		int i, j;
-		bool result = false;
-		for (i = 0, j = polygon.Length - 1; i < polygon.Length; j = i++) {
-			if ((polygon[i].Y > point.Y) != (polygon[j].Y > point.Y) &&
-				(point.X < (polygon[j].X - polygon[i].X) * (point.Y - polygon[i].Y) / (polygon[j].Y - polygon[i].Y) + polygon[i].X)) {
-				result = !result;
+	
+	private void MouseClick(Node viewport, InputEvent @event, long shapeIdx) {
+		if (@event is InputEventMouseButton click) {
+			if (click.Pressed) {
+				GD.Print("click!");
 			}
 		}
-		return result;
-	}
-
-	private Vector2 GetClosestPointInPolygon(Vector2 point, Vector2[] polygon) {
-		Vector2 closestPoint = polygon[0];
-		float minDistSq = point.DistanceSquaredTo(polygon[0]);
-
-		for (int i = 1; i < polygon.Length; i++) {
-			float distSq = point.DistanceSquaredTo(polygon[i]);
-			if (distSq < minDistSq) {
-				minDistSq = distSq;
-				closestPoint = polygon[i];
-			}
-		}
-
-		return closestPoint;
 	}
 }
 
