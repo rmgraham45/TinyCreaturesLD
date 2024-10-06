@@ -23,12 +23,12 @@ public partial class BasicCube : Node2D
 	{
 	}
 	
-	private void _on_rigid_body_2d_mouse_entered()
+	private void _on_box_body_mouse_entered()
 	{
 		RigidBody2D cubeBody = GetNode<RigidBody2D>("BoxBody");
 		cubeBody.EmitSignal(SignalName.MouseEntered, Name);
 	}
-	private void _on_rigid_body_2d_mouse_exited()
+	private void _on_box_body_mouse_exited()
 	{
 		RigidBody2D cubeBody = GetNode<RigidBody2D>("BoxBody");
 		cubeBody.EmitSignal(SignalName.MouseExited, Name);

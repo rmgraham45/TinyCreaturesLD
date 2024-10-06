@@ -9,7 +9,7 @@ public partial class SceneManager : Node
 		Instance = this;
 	}
 
-	public Node2D AddScene(string scenePath, Vector2? spawnPosition = null, Node2D? parent = null)
+	public Node2D AddScene(string scenePath, Vector2? spawnPosition = null, Node2D parent = null)
 	{
 		Node2D sceneToAdd = (Node2D)GD.Load<PackedScene>(scenePath).Instantiate();
 

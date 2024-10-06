@@ -1,8 +1,16 @@
 using Godot;
 using System;
+using System.Linq;
 
 public partial class SpawnCreatureButton : Node2D
 {
+
+	public Godot.Collections.Dictionary<CubeType, string> cubeScenes = 
+		new Godot.Collections.Dictionary<CubeType, string> {
+			{ CubeType.Steel, "res://Cubes/SteelCube.tscn" },
+			{ CubeType.Basic, "res://Cubes/BasicCube.tscn"},
+		};
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -15,11 +23,17 @@ public partial class SpawnCreatureButton : Node2D
 
 	public void _on_area_2d_mouse_entered()
 	{
-		SceneManager.Instance.AddScene("res://Cubes/SteelCube.tscn", GlobalTransform.Origin);
+		Random rand = new Random();
+		SceneManager.Instance.AddScene(cubeScenes.ElementAt(rand.Next(0, cubeScenes.Count)).Value, GlobalTransform.Origin);
 	}
 
 	public void _on_area_2d_mouse_exited()
 	{
 
 	}
+}
+
+public enum CubeType {
+	Basic,
+	Steel,
 }
