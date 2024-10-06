@@ -10,6 +10,7 @@ public partial class SpawnCreatureButton : Node2D
 			{ CubeType.Steel, "res://Cubes/SteelCube.tscn" },
 			{ CubeType.Basic, "res://Cubes/BasicCube.tscn"},
 			{ CubeType.Tree, "res://Cubes/TreeCube.tscn"},
+			{ CubeType.Galoshes, "res://Cubes/GaloshesHome.tscn"},
 		};
 
 	// Called when the node enters the scene tree for the first time.
@@ -38,4 +39,5 @@ public enum CubeType {
 	Basic,
 	Steel,
 	Tree,
+	Galoshes
 }

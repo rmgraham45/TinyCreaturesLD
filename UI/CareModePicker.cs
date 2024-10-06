@@ -18,6 +18,8 @@ public partial class CareModePicker : Control
 		buttons.Add(veggieButton);
 		buttons.Add(trashButton);
 		buttons.Add(gunButton);
+
+		_on_pet_button_pressed();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -34,24 +36,39 @@ public partial class CareModePicker : Control
 			}
 		}
 	}
+	
+	public Intent currentIntent;
 
 	public void _on_pet_button_pressed() {
+		currentIntent = Intent.Pet;
 		DeselectAllOthers(petButton);
 	}
 
 	public void _on_meat_button_pressed() {
+		currentIntent = Intent.Meat;
 		DeselectAllOthers(meatButton);
 	}
 
 	public void _on_veggie_button_pressed() {
+		currentIntent = Intent.Veggie;
 		DeselectAllOthers(veggieButton);
 	}
 
 	public void _on_trash_button_pressed() {
+		currentIntent = Intent.Trash;
 		DeselectAllOthers(trashButton);
 	}
 
 	public void _on_gun_button_pressed() {
+		currentIntent = Intent.Gun;
 		DeselectAllOthers(gunButton);
+	}
+
+	public enum Intent {
+		Pet,
+		Meat,
+		Veggie,
+		Trash,
+		Gun
 	}
 }
