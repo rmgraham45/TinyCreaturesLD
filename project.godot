@@ -20,6 +20,11 @@ config/icon="res://icon.svg"
 
 SceneManager="*res://SceneManager.cs"
 
+[display]
+
+window/size/viewport_width=780
+window/size/viewport_height=980
+
 [dotnet]
 
 project/assembly_name="TinyCreaturesLD"

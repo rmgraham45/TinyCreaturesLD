@@ -22,7 +22,7 @@ public partial class CubePhysics : RigidBody2D
 
 	public override void _IntegrateForces(PhysicsDirectBodyState2D state)
 	{
-		/*if (grabbable && Input.IsActionPressed("Click"))
+		if (grabbable && Input.IsActionPressed("Click"))
 		{
 			GD.Print("Grabbing");
 			var transform = GlobalTransform;
@@ -36,14 +36,15 @@ public partial class CubePhysics : RigidBody2D
 		{
 			RigidBody2D creature = GetParent().GetNode<Node2D>("BoxBody").GetNode<Node2D>("Creature").GetChild<RigidBody2D>(0);
 			creature.SetDeferred("freeze", false);
-		}*/
+		}
 		
-		if (grabbable && Input.IsActionPressed("Click"))
+		/*if (grabbable && Input.IsActionPressed("Click"))
 		{
 			Vector2 mousePos = GetLocalMousePosition();
 			Vector2 startLoc = this.Position;
-			this.Position = startLoc.Lerp(mousePos, 4.9f);
-		}
+			Sprite2D sprite = GetNode<Sprite2D>("Sprite2D");
+			sprite.Position = startLoc.Lerp(mousePos, 4.9f);
+		}*/
 	}
 
 	private void _on_mouse_entered(string nodeName)
