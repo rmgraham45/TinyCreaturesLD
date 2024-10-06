@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cnqayl16hta1k" path="res://Creature/Creature.tscn" id="4_avj05"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gn5fa"]
-size = Vector2(54.7857, 18.3571)
+size = Vector2(575, 192)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_s676b")
@@ -34,8 +34,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("3_3cnln")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BoxBody"]
-position = Vector2(-1.5, -0.500004)
-scale = Vector2(10.5, 10.5)
+position = Vector2(-1.50002, -0.999996)
 shape = SubResource("RectangleShape2D_gn5fa")
 
 [node name="Creature" parent="BoxBody" instance=ExtResource("4_avj05")]

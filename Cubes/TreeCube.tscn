@@ -147,7 +147,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gn5fa"]
-size = Vector2(17.7857, 17.7857)
+size = Vector2(192, 192)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_3k02t")
@@ -175,8 +175,7 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_57fgq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BoxBody"]
-position = Vector2(-1.49999, -0.499991)
-scale = Vector2(10.5, 10.5)
+position = Vector2(-2, 0)
 shape = SubResource("RectangleShape2D_gn5fa")
 
 [node name="Creature" parent="BoxBody" instance=ExtResource("4_2obcm")]

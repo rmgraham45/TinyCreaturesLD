@@ -23,10 +23,10 @@ gunButton = NodePath("GunButton")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
-offset_left = 1047.0
-offset_top = 9.0
-offset_right = 1094.0
-offset_bottom = 192.0
+offset_left = 677.0
+offset_top = 7.0
+offset_right = 724.0
+offset_bottom = 190.0
 scale = Vector2(2, 2)
 texture = ExtResource("1_o8fpv")
 region_rect = Rect2(0, 0, 48, 48)
@@ -39,10 +39,10 @@ axis_stretch_vertical = 2
 
 [node name="PetButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1062.0
-offset_top = 23.0
-offset_right = 1126.0
-offset_bottom = 87.0
+offset_left = 692.0
+offset_top = 21.0
+offset_right = 756.0
+offset_bottom = 85.0
 toggle_mode = true
 icon = ExtResource("2_18jy8")
 icon_alignment = 1
@@ -50,10 +50,10 @@ expand_icon = true
 
 [node name="MeatButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1062.0
-offset_top = 92.0
-offset_right = 1126.0
-offset_bottom = 156.0
+offset_left = 692.0
+offset_top = 90.0
+offset_right = 756.0
+offset_bottom = 154.0
 toggle_mode = true
 icon = ExtResource("3_j28vy")
 icon_alignment = 1
@@ -61,10 +61,10 @@ expand_icon = true
 
 [node name="VeggieButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1062.0
-offset_top = 160.0
-offset_right = 1126.0
-offset_bottom = 224.0
+offset_left = 692.0
+offset_top = 158.0
+offset_right = 756.0
+offset_bottom = 222.0
 toggle_mode = true
 icon = ExtResource("4_pnfo4")
 icon_alignment = 1
@@ -72,10 +72,10 @@ expand_icon = true
 
 [node name="TrashButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1062.0
-offset_top = 228.0
-offset_right = 1126.0
-offset_bottom = 292.0
+offset_left = 692.0
+offset_top = 226.0
+offset_right = 756.0
+offset_bottom = 290.0
 toggle_mode = true
 icon = ExtResource("5_fybab")
 icon_alignment = 1
@@ -83,10 +83,10 @@ expand_icon = true
 
 [node name="GunButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1062.0
-offset_top = 296.0
-offset_right = 1126.0
-offset_bottom = 360.0
+offset_left = 692.0
+offset_top = 294.0
+offset_right = 756.0
+offset_bottom = 358.0
 toggle_mode = true
 icon = ExtResource("6_gp15f")
 icon_alignment = 1
