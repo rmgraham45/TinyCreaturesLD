@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
-public partial class CareModePicker : Node
+public partial class CareModePicker : Control
 {
 
 	[Export]
