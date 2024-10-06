@@ -25,7 +25,7 @@ public partial class CreatureClickSignaler : RigidBody2D
 		}
 	}
 
-	private void _on_mouse_entered()
+	public void _on_mouse_entered()
 	{
 		clickable = true;
 		GD.Print("mouse entered");

@@ -35,6 +35,7 @@ gravity = Vector3(0, 98, 0)
 [node name="TwoHeadedCrab" type="RigidBody2D"]
 collision_layer = 2
 collision_mask = 2
+input_pickable = true
 can_sleep = false
 script = ExtResource("1_ilni6")
 
@@ -56,6 +57,3 @@ texture = ExtResource("3_w3ro0")
 one_shot = true
 fixed_fps = 60
 script = ExtResource("4_lfb1n")
-
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

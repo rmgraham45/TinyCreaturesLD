@@ -1,7 +1,8 @@
 using System;
 using Godot;
 
-public partial class Creature : Node2D {
+public partial class Creature : Node2D 
+{
 
 	public Godot.Collections.Dictionary<CreatureType, string> creatureScenes = new Godot.Collections.Dictionary<CreatureType, string> {
 		{ CreatureType.TwoHeadedCrab, "res://Creature/Scene/TwoHeadedCrab.tscn" }

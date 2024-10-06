@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Cubes/SteelCube.cs" id="1_8n25m"]
 [ext_resource type="Script" path="res://Cubes/CubePhysics.cs" id="1_djtcy"]
 [ext_resource type="Texture2D" uid="uid://glksndacwqvw" path="res://Cubes/CubeArt/SteelCube.png" id="1_uxaxh"]
-[ext_resource type="PackedScene" uid="uid://qinw0i10q41s" path="res://Creature/Creature.tscn" id="2_ekxyf"]
+[ext_resource type="PackedScene" uid="uid://cnqayl16hta1k" path="res://Creature/Creature.tscn" id="2_ekxyf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gn5fa"]
 size = Vector2(17.7857, 17.7857)
