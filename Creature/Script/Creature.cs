@@ -15,6 +15,8 @@ public partial class Creature : Node2D
 
 	[Export]
 	public int happiness; // 0-5
+	public float hunger; // 0-3
+	public float hungerRate = 1.0f; // speed multiplier for hunger
 
 	private CollisionPolygon2D bounds;
 	private CollisionObject2D collider;

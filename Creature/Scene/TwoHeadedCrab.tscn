@@ -31,6 +31,8 @@ flatness = 1.0
 initial_velocity_min = 60.15
 initial_velocity_max = 60.15
 gravity = Vector3(0, 98, 0)
+scale_min = 0.8
+scale_max = 2.0
 
 [node name="TwoHeadedCrab" type="RigidBody2D"]
 collision_layer = 2
@@ -41,6 +43,7 @@ script = ExtResource("1_ilni6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -1)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_paajy")
 autoplay = "default"
 frame_progress = 0.0999115
@@ -48,10 +51,13 @@ frame_progress = 0.0999115
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5)
 rotation = 1.5708
+scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_l6ksy")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+scale = Vector2(2, 2)
 emitting = false
+amount = 6
 process_material = SubResource("ParticleProcessMaterial_o215p")
 texture = ExtResource("3_w3ro0")
 one_shot = true
