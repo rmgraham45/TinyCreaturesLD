@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=4 uid="uid://bw24ablsn6cw4"]
+[gd_scene load_steps=7 format=4 uid="uid://bw24ablsn6cw4"]
 
 [ext_resource type="Texture2D" uid="uid://bft7fsnsdu38x" path="res://MiscArt/White.png" id="1_1aao4"]
 [ext_resource type="Texture2D" uid="uid://bwbfh0ur6ofm5" path="res://MiscArt/Green.png" id="2_dhsb1"]
-[ext_resource type="PackedScene" uid="uid://dp6fumk8elddv" path="res://UI/SpawnButton/SpawnCreatureButton.tscn" id="3_80wlj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6xott"]
 texture = ExtResource("1_1aao4")
@@ -62,6 +61,3 @@ collision_enabled = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(389, 939.75)
 shape = SubResource("RectangleShape2D_am8vk")
-
-[node name="SpawnCreatureButton" parent="." instance=ExtResource("3_80wlj")]
-position = Vector2(144, 51)

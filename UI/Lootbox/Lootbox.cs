@@ -1,10 +1,10 @@
 using Godot;
 using System;
-using System.Linq;
+using System.Collections.Generic;
 
-public partial class SpawnCreatureButton : Node2D
+public partial class Lootbox : Control
 {
-
+	
 	public Godot.Collections.Dictionary<CubeType, string> cubeScenes = 
 		new Godot.Collections.Dictionary<CubeType, string> {
 			{ CubeType.Steel, "res://Cubes/SteelCube.tscn" },
@@ -12,7 +12,7 @@ public partial class SpawnCreatureButton : Node2D
 			{ CubeType.Tree, "res://Cubes/TreeCube.tscn"},
 			{ CubeType.Galoshes, "res://Cubes/GaloshesHome.tscn"},
 		};
-
+		
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -23,15 +23,28 @@ public partial class SpawnCreatureButton : Node2D
 	{
 	}
 
-	public void _on_area_2d_mouse_entered()
-	{
+	[Export]
+	public Vector2 spawnTarget;
+	
+	public void _on_loot_button_pressed() {
 		Random rand = new Random();
-		SceneManager.Instance.AddScene(cubeScenes.ElementAt(rand.Next(0, cubeScenes.Count)).Value, GlobalTransform.Origin);
-	}
+		int index = rand.Next(0, cubeScenes.Count);
+		string scenePath = null;
+		int i = 0;
+		foreach (var kvp in cubeScenes)
+		{
+			if (i == index)
+			{
+				scenePath = kvp.Value;
+				break;
+			}
+			i++;
+		}
 
-	public void _on_area_2d_mouse_exited()
-	{
-
+		if (scenePath != null)
+		{
+			SceneManager.Instance.AddScene(scenePath, spawnTarget);
+		}
 	}
 }
 
