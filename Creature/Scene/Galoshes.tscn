@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://b5ltqt5cjjfw3"]
 
 [ext_resource type="Script" path="res://Creature/Scene/CreatureClickSignaler.cs" id="1_kgph1"]
-[ext_resource type="Texture2D" uid="uid://bxxs6v3evbi5l" path="res://Creature/Sprite/TwoHeadedCrab/lilguy1.png" id="2_higke"]
-[ext_resource type="Texture2D" uid="uid://cp0owalxgeqh3" path="res://Creature/Sprite/TwoHeadedCrab/lilguy2.png" id="3_6fgx0"]
+[ext_resource type="Texture2D" uid="uid://dwq0pwj34bimt" path="res://Creature/Sprite/Galoshes/galoshes1.png" id="2_dfutw"]
+[ext_resource type="Texture2D" uid="uid://ddri7r228pl41" path="res://Creature/Sprite/Galoshes/galoshes2.png" id="3_yv3g3"]
 [ext_resource type="Texture2D" uid="uid://bher6keajrrst" path="res://Emote/Sprite/love.png" id="4_2c3lr"]
 [ext_resource type="Script" path="res://Emote/Script/Emote.cs" id="5_by7lx"]
 
@@ -10,10 +10,10 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_higke")
+"texture": ExtResource("2_dfutw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_6fgx0")
+"texture": ExtResource("3_yv3g3")
 }],
 "loop": true,
 "name": &"default",
@@ -21,7 +21,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l6ksy"]
-radius = 11.0
+radius = 4.5
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_o215p"]
 particle_flag_disable_z = true
@@ -34,7 +34,7 @@ gravity = Vector3(0, 98, 0)
 scale_min = 0.8
 scale_max = 2.0
 
-[node name="TwoHeadedCrab" type="RigidBody2D"]
+[node name="Galoshes" type="RigidBody2D"]
 collision_layer = 2
 collision_mask = 2
 input_pickable = true
@@ -49,7 +49,7 @@ autoplay = "default"
 frame_progress = 0.0999115
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5)
+position = Vector2(0, 20)
 rotation = 1.5708
 scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_l6ksy")

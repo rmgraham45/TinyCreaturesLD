@@ -8,7 +8,7 @@ public partial class SpawnCreatureButton : Node2D
 	public Godot.Collections.Dictionary<CubeType, string> cubeScenes = 
 		new Godot.Collections.Dictionary<CubeType, string> {
 			{ CubeType.Steel, "res://Cubes/SteelCube.tscn" },
-			{ CubeType.Basic, "res://Cubes/BasicCube.tscn"},
+			{ CubeType.Galoshes, "res://Cubes/GaloshesHome.tscn"},
 		};
 
 	// Called when the node enters the scene tree for the first time.
@@ -36,4 +36,5 @@ public partial class SpawnCreatureButton : Node2D
 public enum CubeType {
 	Basic,
 	Steel,
+	Galoshes
 }

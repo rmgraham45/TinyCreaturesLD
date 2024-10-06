@@ -13,9 +13,6 @@ public partial class Start : Node2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		if (Input.IsActionJustPressed("Space"))
-		{
-			SceneManager.Instance.AddScene("res://Cubes/BasicCube.tscn", GetGlobalMousePosition());
-		}
+
 	}
 }

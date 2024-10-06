@@ -1,11 +1,13 @@
 using System;
+using System.ComponentModel;
 using Godot;
 
 public partial class Creature : Node2D 
 {
 
 	public Godot.Collections.Dictionary<CreatureType, string> creatureScenes = new Godot.Collections.Dictionary<CreatureType, string> {
-		{ CreatureType.TwoHeadedCrab, "res://Creature/Scene/TwoHeadedCrab.tscn" }
+		{ CreatureType.TwoHeadedCrab, "res://Creature/Scene/TwoHeadedCrab.tscn" },
+		{ CreatureType.Galoshes, "res://Creature/Scene/Galoshes.tscn" }
 	};
 
 	[Export]
@@ -15,13 +17,21 @@ public partial class Creature : Node2D
 
 	[Export]
 	public int happiness; // 0-5
+	[Export]
 	public float hunger; // 0-3
+	[Export]
 	public float hungerRate = 1.0f; // speed multiplier for hunger
+	[Export]
+	public bool likesTickled = true;
 
 	private CollisionPolygon2D bounds;
 	private CollisionObject2D collider;
 
 	private Emote emote;
+
+	private CareModePicker careModePicker;
+
+	private Node2D cube;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
@@ -34,6 +44,10 @@ public partial class Creature : Node2D
 		collider.InputEvent += MouseClick;
 
 		emote = GetChild<Node2D>(0).GetNode<Emote>("GPUParticles2D");
+
+		careModePicker = GetTree().Root.GetNode<SceneManager>("SceneManager").GetNode<CareModePicker>("CareUi");
+	
+		cube = GetParent<RigidBody2D>().GetParent<Node2D>();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -50,18 +64,78 @@ public partial class Creature : Node2D
 	private void MouseClick(Node viewport, InputEvent @event, long shapeIdx) {
 		if (@event is InputEventMouseButton click) {
 			if (click.Pressed) {
-				emote.ShowLove();
+				Interact();
 			}
 		}
+	}
+
+	public void Interact() {
+		switch (careModePicker.currentIntent) {
+			case CareModePicker.Intent.Pet:
+				if (likesTickled) {
+					emote.ShowLaugh();
+					happiness++;
+					if (happiness > 5) happiness = 5;
+				} else {
+					emote.ShowHate();
+					happiness--;
+					if (happiness < 0) happiness = 0;
+				}
+				break;
+
+			case CareModePicker.Intent.Meat:
+				if (foodType == CreatureFoodType.None) {
+					emote.ShowHate();
+				}
+				else if (foodType == CreatureFoodType.Meat) {
+					emote.ShowLove();
+					hunger = 0;
+				} else if (foodType == CreatureFoodType.Veggie) {
+					emote.ShowSick();
+					hunger++;
+					if (hunger < 0) hunger = 0;
+				} else if (foodType == CreatureFoodType.Omni) {
+					emote.ShowLove();
+					hunger = 0;
+				}
+				break;
+
+			case CareModePicker.Intent.Veggie:
+				if (foodType == CreatureFoodType.None) {
+					emote.ShowHate();
+				}
+				else if (foodType == CreatureFoodType.Meat) {
+					emote.ShowSick();
+					hunger++;
+					if (hunger < 0) hunger = 0;
+				} else if (foodType == CreatureFoodType.Veggie) {
+					emote.ShowLove();
+					hunger = 0;
+				} else if (foodType == CreatureFoodType.Omni) {
+					emote.ShowLove();
+					hunger = 0;
+				}
+				break;
+		}
+
+		if (hunger == 5 || happiness == 0) {
+			Die();
+		}
+	}
+
+	public void Die() {
+		cube.QueueFree();
 	}
 }
 
 public enum CreatureType {
-	TwoHeadedCrab
+	TwoHeadedCrab,
+	Galoshes
 }
 
 public enum CreatureFoodType {
 	None,
 	Meat,
-	Veggie
+	Veggie,
+	Omni
 };
