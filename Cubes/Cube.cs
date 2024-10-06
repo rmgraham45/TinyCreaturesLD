@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class SpawnCreatureButton : Node2D
+public partial class Cube : Node2D
 {
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -11,15 +11,5 @@ public partial class SpawnCreatureButton : Node2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-	}
-
-	public void _on_area_2d_mouse_entered()
-	{
-		SceneManager.Instance.AddScene("res://Cubes/SteelCube.tscn", GlobalTransform.Origin);
-	}
-
-	public void _on_area_2d_mouse_exited()
-	{
-
 	}
 }

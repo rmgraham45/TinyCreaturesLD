@@ -24,6 +24,7 @@ public partial class CubePhysics : RigidBody2D
 	{
 		if (grabbable && Input.IsActionPressed("Click"))
 		{
+			GD.Print("Grabbing");
 			var transform = GlobalTransform;
 			transform.Origin = GetGlobalMousePosition();
 			GlobalTransform = transform;

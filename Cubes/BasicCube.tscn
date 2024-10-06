@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Cubes/BasicCube.cs" id="1_4j1df"]
 [ext_resource type="Texture2D" uid="uid://cus8ulwoobvb2" path="res://Cubes/CubeArt/BasicCubeShape.png" id="1_05c8d"]
 [ext_resource type="Script" path="res://Cubes/CubePhysics.cs" id="3_nclh8"]
-[ext_resource type="Script" path="res://Creature/Script/Creature.cs" id="4_o3pxd"]
+[ext_resource type="PackedScene" uid="uid://qinw0i10q41s" path="res://Creature/Creature.tscn" id="4_cb0ep"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ulo46"]
 size = Vector2(97, 63)
@@ -15,7 +15,6 @@ script = ExtResource("1_4j1df")
 [node name="BoxBody" type="RigidBody2D" parent="."]
 input_pickable = true
 can_sleep = false
-linear_damp = 2.0
 script = ExtResource("3_nclh8")
 
 [node name="InteriorWalls" type="RigidBody2D" parent="BoxBody"]
@@ -36,10 +35,10 @@ scale = Vector2(1.54688, 1)
 texture = ExtResource("1_05c8d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BoxBody"]
+visible = false
 shape = SubResource("RectangleShape2D_ulo46")
 
-[node name="Creature" type="Node2D" parent="BoxBody"]
-script = ExtResource("4_o3pxd")
+[node name="Creature" parent="BoxBody" instance=ExtResource("4_cb0ep")]
 
 [connection signal="MouseEntered" from="BoxBody" to="BoxBody" method="_on_mouse_entered"]
 [connection signal="MouseExited" from="BoxBody" to="BoxBody" method="_on_mouse_exited"]

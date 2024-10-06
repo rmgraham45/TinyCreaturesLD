@@ -63,4 +63,4 @@ position = Vector2(597.5, 582)
 shape = SubResource("RectangleShape2D_am8vk")
 
 [node name="SpawnCreatureButton" parent="." instance=ExtResource("3_80wlj")]
-position = Vector2(136, 45)
+position = Vector2(144, 51)
