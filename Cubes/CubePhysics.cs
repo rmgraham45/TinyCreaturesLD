@@ -10,6 +10,7 @@ public partial class CubePhysics : RigidBody2D
 	private bool grabbable = false;
 	const int SPRING_CONSTANT = 10;
 	private double deltaForce;
+	private double deltasucks;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -18,17 +19,16 @@ public partial class CubePhysics : RigidBody2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		deltasucks = delta;
 	}
 
 	public override void _IntegrateForces(PhysicsDirectBodyState2D state)
 	{
 		if (grabbable && Input.IsActionPressed("Click"))
 		{
-			GD.Print("Grabbing");
-			var transform = GlobalTransform;
-			transform.Origin = GetGlobalMousePosition();
-			GlobalTransform = transform;
-
+			GD.Print(this.Position);
+			this.Position = this.Position.Lerp(GetGlobalMousePosition() + GetLocalMousePosition(), 0.006f);
+			GD.Print(this.Position);
 			RigidBody2D creature = GetParent().GetNode<Node2D>("BoxBody").GetNode<Node2D>("Creature").GetChild<RigidBody2D>(0);
 			creature.SetDeferred("freeze", true);
 		}
