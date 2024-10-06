@@ -6,12 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://cnqayl16hta1k" path="res://Creature/Creature.tscn" id="4_avj05"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gn5fa"]
-size = Vector2(54.7857, 18.3571)
+size = Vector2(575, 192)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_s676b")
 
 [node name="BoxBody" type="RigidBody2D" parent="."]
+position = Vector2(0, 2)
 input_pickable = true
 can_sleep = false
 script = ExtResource("2_11kky")
@@ -23,17 +24,17 @@ can_sleep = false
 freeze = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BoxBody/InteriorWalls"]
+scale = Vector2(0.75, 0.75)
 build_mode = 1
 polygon = PackedVector2Array(-365, -108, 361, -108, 359, 56, 263, 53, 209, 59, 150, 69, 72, 82, 14, 85, -21, 90, -55, 90, -105, 83, -158, 82, -165, 77, -318, 78, -345, 84, -365, 84)
 
 [node name="Sprite2D" type="Sprite2D" parent="BoxBody"]
 position = Vector2(-1.5, -0.5)
-scale = Vector2(4, 4)
+scale = Vector2(3, 3)
 texture = ExtResource("3_3cnln")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BoxBody"]
-position = Vector2(-1.5, -0.500004)
-scale = Vector2(14, 14)
+position = Vector2(-1.50002, -0.999996)
 shape = SubResource("RectangleShape2D_gn5fa")
 
 [node name="Creature" parent="BoxBody" instance=ExtResource("4_avj05")]

@@ -24,7 +24,6 @@ public partial class Creature : Node2D
 	[Export]
 	public bool likesTickled = true;
 
-	private CollisionPolygon2D bounds;
 	private CollisionObject2D collider;
 
 	private Emote emote;
@@ -32,13 +31,14 @@ public partial class Creature : Node2D
 	private CareModePicker careModePicker;
 
 	private Node2D cube;
+	private CollisionShape2D cubeArea;
+	private RigidBody2D rb2d;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
 		// Called every time the node is added to the scene.
 		LoadScene();
 
-		bounds = GetParent().GetNode<RigidBody2D>("InteriorWalls").GetChild<CollisionPolygon2D>(0);
 		collider = GetChild<CollisionObject2D>(0);
 
 		collider.InputEvent += MouseClick;
@@ -48,11 +48,14 @@ public partial class Creature : Node2D
 		careModePicker = GetTree().Root.GetNode<SceneManager>("SceneManager").GetNode<CareModePicker>("CareUi");
 	
 		cube = GetParent<RigidBody2D>().GetParent<Node2D>();
+		cubeArea = cube.GetNode<RigidBody2D>("BoxBody").GetNode<CollisionShape2D>("CollisionShape2D");
+		rb2d = GetChild<RigidBody2D>(0);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta) {
 		// Called every frame. Delta is the elapsed time since the previous frame.
+		FixOutOfBounds();
 	}
 
 	public void LoadScene() {
@@ -125,6 +128,17 @@ public partial class Creature : Node2D
 
 	public void Die() {
 		cube.QueueFree();
+	}
+
+	public void FixOutOfBounds() {
+		// check if Creature position falls within cubeArea
+		if (cubeArea.Shape.GetRect().HasPoint(rb2d.Position)) {
+			return;
+		}
+		else {
+			// if not, move Creature to the center of it
+			rb2d.Position = cubeArea.Shape.GetRect().GetCenter();
+		}
 	}
 }
 

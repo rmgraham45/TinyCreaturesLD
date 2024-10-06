@@ -47,7 +47,7 @@ sources/0 = SubResource("TileSetAtlasSource_6xott")
 sources/1 = SubResource("TileSetAtlasSource_d2kd2")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_am8vk"]
-size = Vector2(779.5, 111)
+size = Vector2(779.5, 79.5)
 
 [node name="Node2D" type="Node2D"]
 
@@ -60,7 +60,7 @@ collision_enabled = false
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(389, 924)
+position = Vector2(389, 939.75)
 shape = SubResource("RectangleShape2D_am8vk")
 
 [node name="SpawnCreatureButton" parent="." instance=ExtResource("3_80wlj")]

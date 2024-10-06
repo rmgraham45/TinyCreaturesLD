@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://vkfg2x05nc5k"]
+[gd_scene load_steps=26 format=3 uid="uid://bgwk3dtnqeref"]
 
 [ext_resource type="Script" path="res://Cubes/TreeCube.cs" id="1_3k02t"]
 [ext_resource type="Script" path="res://Cubes/CubePhysics.cs" id="2_rqs51"]
@@ -147,7 +147,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gn5fa"]
-size = Vector2(17.7857, 17.7857)
+size = Vector2(192, 192)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_3k02t")
@@ -158,23 +158,24 @@ can_sleep = false
 script = ExtResource("2_rqs51")
 
 [node name="InteriorWalls" type="RigidBody2D" parent="BoxBody"]
+scale = Vector2(0.75, 0.75)
 collision_layer = 2
 collision_mask = 2
 can_sleep = false
 freeze = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BoxBody/InteriorWalls"]
+scale = Vector2(0.75, 0.75)
 build_mode = 1
 polygon = PackedVector2Array(-107, -107, 104, -107, 104, 106, -107, 106)
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="BoxBody"]
 position = Vector2(-1.5, -0.5)
-scale = Vector2(4, 4)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_57fgq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BoxBody"]
-position = Vector2(-1.49999, -0.499991)
-scale = Vector2(14, 14)
+position = Vector2(-2, 0)
 shape = SubResource("RectangleShape2D_gn5fa")
 
 [node name="Creature" parent="BoxBody" instance=ExtResource("4_2obcm")]
