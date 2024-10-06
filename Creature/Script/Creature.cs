@@ -19,6 +19,8 @@ public partial class Creature : Node2D
 	private CollisionPolygon2D bounds;
 	private CollisionObject2D collider;
 
+	private Emote emote;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
 		// Called every time the node is added to the scene.
@@ -28,6 +30,8 @@ public partial class Creature : Node2D
 		collider = GetChild<CollisionObject2D>(0);
 
 		collider.InputEvent += MouseClick;
+
+		emote = GetChild<Node2D>(0).GetNode<Emote>("GPUParticles2D");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -44,7 +48,7 @@ public partial class Creature : Node2D
 	private void MouseClick(Node viewport, InputEvent @event, long shapeIdx) {
 		if (@event is InputEventMouseButton click) {
 			if (click.Pressed) {
-				GD.Print("click!");
+				emote.ShowLove();
 			}
 		}
 	}
