@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://bolqdcmco2ta5"]
+
+[ext_resource type="Script" path="res://Creature/Scene/CreatureClickSignaler.cs" id="1_4jmoi"]
+[ext_resource type="Texture2D" uid="uid://chh6qax3jlxa4" path="res://Creature/Sprite/Gemma/Gemma.png" id="2_n81hw"]
+[ext_resource type="Texture2D" uid="uid://bher6keajrrst" path="res://Emote/Sprite/love.png" id="4_d8vdl"]
+[ext_resource type="Script" path="res://Emote/Script/Emote.cs" id="5_ao04k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_454w4"]
+atlas = ExtResource("2_n81hw")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_paajy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_454w4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l6ksy"]
+radius = 22.0
+height = 44.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_o215p"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, -15.455, 0)
+direction = Vector3(0, -0.14, 0)
+flatness = 1.0
+initial_velocity_min = 60.15
+initial_velocity_max = 60.15
+gravity = Vector3(0, 98, 0)
+scale_min = 0.8
+scale_max = 2.0
+
+[node name="Gemma" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 2
+input_pickable = true
+can_sleep = false
+script = ExtResource("1_4jmoi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_paajy")
+autoplay = "default"
+frame_progress = 0.0999115
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
+position = Vector2(-10, 2)
+rotation = 1.5708
+scale = Vector2(2, 2)
+shape = SubResource("CapsuleShape2D_l6ksy")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+scale = Vector2(2, 2)
+emitting = false
+amount = 6
+process_material = SubResource("ParticleProcessMaterial_o215p")
+texture = ExtResource("4_d8vdl")
+one_shot = true
+fixed_fps = 60
+script = ExtResource("5_ao04k")

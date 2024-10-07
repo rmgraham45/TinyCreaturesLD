@@ -4,14 +4,15 @@ using System.Collections.Generic;
 
 public partial class Lootbox : Control
 {
-	
+	public const string cubeLoc = "res://Cubes/CubeScenes/";
 	public Godot.Collections.Dictionary<CubeType, string> cubeScenes = 
 		new Godot.Collections.Dictionary<CubeType, string> {
-			{ CubeType.Steel, "res://Cubes/CubeScenes/SteelCube.tscn" },
-			{ CubeType.Basic, "res://Cubes/CubeScenes/BasicCube.tscn"},
-			{ CubeType.Tree, "res://Cubes/CubeScenes/TreeCube.tscn"},
-			{ CubeType.Galoshes, "res://Cubes/CubeScenes/GaloshesHome.tscn"},
-			{ CubeType.Squiggles, "res://Cubes/CubeScenes/SquiggleCube.tscn"}
+			{ CubeType.Steel, cubeLoc + "SteelCube.tscn" },
+			{ CubeType.Basic, cubeLoc + "BasicCube.tscn"},
+			{ CubeType.Tree, cubeLoc + "TreeCube.tscn"},
+			{ CubeType.Galoshes, cubeLoc + "GaloshesHome.tscn"},
+			{ CubeType.Squiggles, cubeLoc + "SquiggleCube.tscn"},
+			{ CubeType.Pancake, cubeLoc + "PancakeCube.tscn"}
 		};
 		
 	private Node2D banner;
@@ -72,5 +73,7 @@ public enum CubeType {
 	Steel,
 	Tree,
 	Galoshes,
-	Squiggles
+	Squiggles,
+	Pancake,
+	Gemma
 }

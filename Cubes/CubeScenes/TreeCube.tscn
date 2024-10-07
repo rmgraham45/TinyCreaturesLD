@@ -167,7 +167,7 @@ freeze = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BoxBody/InteriorWalls"]
 scale = Vector2(0.75, 0.75)
 build_mode = 1
-polygon = PackedVector2Array(-107, -107, 104, -107, 104, 106, -107, 106)
+polygon = PackedVector2Array(-161.778, -160, 156.444, -160, 156.444, 158.222, -161.778, 158.222)
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="BoxBody"]
 position = Vector2(-1.5, -0.5)
@@ -186,6 +186,7 @@ creatureLikes = "Pet"
 creatureDislikes = "Meat"
 floating = true
 creatureType = 2
+foodType = 2
 happiness = 5
 hungerRate = 2.0
 
