@@ -10,4 +10,9 @@ process_callback = 0
 wait_time = 3.942
 autostart = true
 
+[node name="NeedsTimer" type="Timer" parent="Timer"]
+wait_time = 10.0
+autostart = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer/NeedsTimer" to="." method="_on_needs_timer_timeout"]

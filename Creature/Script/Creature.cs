@@ -26,9 +26,9 @@ public partial class Creature : Node2D
 	[Export]
 	public int happiness; // 0-5
 	[Export]
-	public float hunger; // 0-3
+	public float hunger; // 0-5
 	[Export]
-	public float hungerRate = 1.0f; // speed multiplier for hunger
+	public float needsRate = 1.0f; // speed multiplier for hunger - higher is faster
 	[Export]
 	public bool likesTickled = true;
 
@@ -43,6 +43,8 @@ public partial class Creature : Node2D
 	private RigidBody2D rb2d;
 
 	private Bestiary bestiary;
+
+	public Timer needsTimer;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
@@ -62,6 +64,9 @@ public partial class Creature : Node2D
 		rb2d = GetChild<RigidBody2D>(1);
 
 		bestiary = GetTree().Root.GetNode<SceneManager>("SceneManager").GetNode<Bestiary>("Control/Camera2D/CanvasLayer/BestiaryUi");
+
+		needsTimer = GetNode<Timer>("Timer").GetNode<Timer>("NeedsTimer");
+		needsTimer.WaitTime = needsTimer.WaitTime / needsRate;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -89,8 +94,7 @@ public partial class Creature : Node2D
 			case CareModePicker.Intent.Pet:
 				if (likesTickled) {
 					emote.ShowLaugh();
-					happiness++;
-					if (happiness > 5) happiness = 5;
+					happiness = 5;
 				} else {
 					emote.ShowHate();
 					happiness--;
@@ -147,15 +151,8 @@ public partial class Creature : Node2D
 				break;
 		}
 
-		if (hunger == 5) {
-			Die();
-		}
-		else if (happiness == 0) {
-			Die();
-		}
-		else {
-			UpdateMoodBubble();
-		}
+		CheckIfDead();
+		UpdateMoodBubble();
 	}
 
 	public void Die() {
@@ -180,6 +177,22 @@ public partial class Creature : Node2D
 		{
 			RigidBody2D floatingBody = (RigidBody2D)this.GetChild(1);
 			floatingBody.ApplyImpulse(new Vector2(80f,80f));
+		}
+	}
+
+	private void _on_needs_timer_timeout() {
+		hunger++;
+		happiness--;
+		UpdateMoodBubble();
+		CheckIfDead();
+	}
+
+	public void CheckIfDead() {
+		if (hunger >= 5) {
+			Die();
+		}
+		else if (happiness <= 0) {
+			Die();
 		}
 	}
 
