@@ -12,9 +12,8 @@
 [node name="CareUi" type="Control" node_paths=PackedStringArray("petButton", "meatButton", "veggieButton", "trashButton", "gunButton", "learnButton")]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1152.0
-offset_bottom = 648.0
-rotation = -0.00376301
+offset_right = 780.0
+offset_bottom = 981.0
 mouse_filter = 2
 script = ExtResource("1_bgay8")
 petButton = NodePath("PetButton")
@@ -112,4 +111,4 @@ expand_icon = true
 [connection signal="pressed" from="VeggieButton" to="." method="_on_veggie_button_pressed"]
 [connection signal="pressed" from="TrashButton" to="." method="_on_trash_button_pressed"]
 [connection signal="pressed" from="GunButton" to="." method="_on_gun_button_pressed"]
-[connection signal="pressed" from="LearnButton" to="." method="_on_gun_button_pressed"]
+[connection signal="pressed" from="LearnButton" to="." method="_on_learn_button_pressed"]

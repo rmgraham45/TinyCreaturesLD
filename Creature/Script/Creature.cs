@@ -11,6 +11,9 @@ public partial class Creature : Node2D
 	};
 
 	[Export]
+	public string creatureName = "ERR", creatureDescription = "ERR", creatureLikes = "ERR", creatureDislikes = "ERR";
+
+	[Export]
 	public CreatureType creatureType;
 	[Export]
 	public CreatureFoodType foodType = CreatureFoodType.None;
@@ -34,6 +37,8 @@ public partial class Creature : Node2D
 	private CollisionShape2D cubeArea;
 	private RigidBody2D rb2d;
 
+	private Bestiary bestiary;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
 		// Called every time the node is added to the scene.
@@ -50,6 +55,8 @@ public partial class Creature : Node2D
 		cube = GetParent<RigidBody2D>().GetParent<Node2D>();
 		cubeArea = cube.GetNode<RigidBody2D>("BoxBody").GetNode<CollisionShape2D>("CollisionShape2D");
 		rb2d = GetChild<RigidBody2D>(0);
+
+		bestiary = GetTree().Root.GetNode<SceneManager>("SceneManager").GetNode<Bestiary>("BestiaryUi");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -118,6 +125,14 @@ public partial class Creature : Node2D
 					emote.ShowLove();
 					hunger = 0;
 				}
+				break;
+			
+			case CareModePicker.Intent.Gun:
+				Die();
+				break;
+			
+			case CareModePicker.Intent.Learn:
+				bestiary.OpenWindow(this);
 				break;
 		}
 
