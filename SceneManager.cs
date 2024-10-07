@@ -30,11 +30,25 @@ public partial class SceneManager : Node
 		return sceneToAdd;
 	}
 
-	public void AddControl(string controlPath)
+	public Control AddControl(string controlPath, Vector2? spawnPosition = null, Node2D? parent = null)
 	{
 		Control controlAdd = (Control)GD.Load<PackedScene>(controlPath).Instantiate();
 		
-		Instance.AddChild(controlAdd);
+		if (spawnPosition != null)
+		{
+			controlAdd.GlobalPosition = spawnPosition.Value;
+		}
+
+		if (parent != null)
+		{
+			parent.AddChild(controlAdd);
+		}
+		else
+		{
+			Instance.AddChild(controlAdd);
+		}
+
+		return controlAdd;
 	}
 
 }

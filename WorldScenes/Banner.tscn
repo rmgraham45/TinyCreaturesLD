@@ -1,14 +1,14 @@
 [gd_scene load_steps=12 format=3 uid="uid://cumhckvo36u2i"]
 
 [ext_resource type="Script" path="res://UI/HighScoreBanner/Banner.cs" id="1_snqum"]
-[ext_resource type="Texture2D" uid="uid://chet1dhnnydcp" path="res://UI/HighScoreBanner/banner1.png" id="2_kahrf"]
-[ext_resource type="Texture2D" uid="uid://cw2a763j8rv7i" path="res://UI/HighScoreBanner/banner2.png" id="3_uxubu"]
-[ext_resource type="Texture2D" uid="uid://choro6d8tfiyr" path="res://UI/HighScoreBanner/banner3.png" id="4_dsdwf"]
-[ext_resource type="Texture2D" uid="uid://c45a8dtx8da3r" path="res://UI/HighScoreBanner/banner4.png" id="5_sqya8"]
-[ext_resource type="Texture2D" uid="uid://b04k2okwxmpge" path="res://UI/HighScoreBanner/banner5.png" id="6_aupg7"]
-[ext_resource type="Texture2D" uid="uid://b7h6fd1cvtngu" path="res://UI/HighScoreBanner/banner6.png" id="7_hdf2t"]
-[ext_resource type="Texture2D" uid="uid://dle5mbnd2hnxk" path="res://UI/HighScoreBanner/banner7.png" id="8_ts2ub"]
-[ext_resource type="Texture2D" uid="uid://bywtviljfao5l" path="res://UI/HighScoreBanner/banner8.png" id="9_0u4uw"]
+[ext_resource type="Texture2D" uid="uid://bko0r3dpbgr22" path="res://UI/HighScoreBanner/banner1.png" id="2_kahrf"]
+[ext_resource type="Texture2D" uid="uid://bafqxo0um85dd" path="res://UI/HighScoreBanner/banner2.png" id="3_uxubu"]
+[ext_resource type="Texture2D" uid="uid://bn36w7oj8vnxw" path="res://UI/HighScoreBanner/banner3.png" id="4_dsdwf"]
+[ext_resource type="Texture2D" uid="uid://bnna7wmawj4ea" path="res://UI/HighScoreBanner/banner4.png" id="5_sqya8"]
+[ext_resource type="Texture2D" uid="uid://cj3nhb3rg7c2u" path="res://UI/HighScoreBanner/banner5.png" id="6_aupg7"]
+[ext_resource type="Texture2D" uid="uid://naw5l3bhm7gw" path="res://UI/HighScoreBanner/banner6.png" id="7_hdf2t"]
+[ext_resource type="Texture2D" uid="uid://dekaog1tu5vya" path="res://UI/HighScoreBanner/banner7.png" id="8_ts2ub"]
+[ext_resource type="Texture2D" uid="uid://d1d40ih70lcvx" path="res://UI/HighScoreBanner/banner8.png" id="9_0u4uw"]
 [ext_resource type="FontFile" uid="uid://pot2as5dro5c" path="res://UI/Font/ARCADECLASSIC.TTF" id="10_lhhc0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dm2r7"]
@@ -58,10 +58,10 @@ frame_progress = 0.224594
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 z_index = 2
-offset_left = 285.0
-offset_top = -26.0
-offset_right = 396.0
-offset_bottom = 14.0
+offset_left = 207.0
+offset_top = -24.0
+offset_right = 318.0
+offset_bottom = 16.0
 theme_override_fonts/normal_font = ExtResource("10_lhhc0")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true

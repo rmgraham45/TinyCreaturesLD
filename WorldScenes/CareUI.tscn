@@ -12,7 +12,7 @@
 [node name="CareUi" type="Control" node_paths=PackedStringArray("petButton", "meatButton", "veggieButton", "trashButton", "gunButton", "learnButton")]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 780.0
+offset_right = 900.0
 offset_bottom = 981.0
 mouse_filter = 2
 script = ExtResource("1_bgay8")
@@ -25,9 +25,9 @@ learnButton = NodePath("LearnButton")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
-offset_left = 677.0
+offset_left = 797.0
 offset_top = 7.0
-offset_right = 724.0
+offset_right = 844.0
 offset_bottom = 224.0
 scale = Vector2(2, 2)
 texture = ExtResource("1_o8fpv")
@@ -41,9 +41,9 @@ axis_stretch_vertical = 2
 
 [node name="PetButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 692.0
+offset_left = 812.0
 offset_top = 21.0
-offset_right = 756.0
+offset_right = 876.0
 offset_bottom = 85.0
 toggle_mode = true
 icon = ExtResource("2_18jy8")
@@ -52,9 +52,9 @@ expand_icon = true
 
 [node name="MeatButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 692.0
+offset_left = 812.0
 offset_top = 90.0
-offset_right = 756.0
+offset_right = 876.0
 offset_bottom = 154.0
 toggle_mode = true
 icon = ExtResource("3_j28vy")
@@ -63,9 +63,9 @@ expand_icon = true
 
 [node name="VeggieButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 692.0
+offset_left = 812.0
 offset_top = 158.0
-offset_right = 756.0
+offset_right = 876.0
 offset_bottom = 222.0
 toggle_mode = true
 icon = ExtResource("4_pnfo4")
@@ -74,9 +74,9 @@ expand_icon = true
 
 [node name="TrashButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 692.0
+offset_left = 812.0
 offset_top = 226.0
-offset_right = 756.0
+offset_right = 876.0
 offset_bottom = 290.0
 toggle_mode = true
 icon = ExtResource("5_fybab")
@@ -85,9 +85,9 @@ expand_icon = true
 
 [node name="GunButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 692.0
+offset_left = 812.0
 offset_top = 294.0
-offset_right = 756.0
+offset_right = 876.0
 offset_bottom = 358.0
 toggle_mode = true
 icon = ExtResource("6_gp15f")
@@ -96,9 +96,9 @@ expand_icon = true
 
 [node name="LearnButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 692.0
+offset_left = 812.0
 offset_top = 362.0
-offset_right = 756.0
+offset_right = 876.0
 offset_bottom = 426.0
 rotation = 0.01191
 toggle_mode = true
