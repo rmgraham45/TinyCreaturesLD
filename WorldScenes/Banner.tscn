@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c0tsnct7hpabv"]
+[gd_scene load_steps=12 format=3 uid="uid://cumhckvo36u2i"]
 
 [ext_resource type="Script" path="res://UI/HighScoreBanner/Banner.cs" id="1_snqum"]
 [ext_resource type="Texture2D" uid="uid://chet1dhnnydcp" path="res://UI/HighScoreBanner/banner1.png" id="2_kahrf"]
