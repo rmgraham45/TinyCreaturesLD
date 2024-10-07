@@ -7,10 +7,10 @@ public partial class Lootbox : Control
 	
 	public Godot.Collections.Dictionary<CubeType, string> cubeScenes = 
 		new Godot.Collections.Dictionary<CubeType, string> {
-			{ CubeType.Steel, "res://Cubes/SteelCube.tscn" },
-			{ CubeType.Basic, "res://Cubes/BasicCube.tscn"},
-			{ CubeType.Tree, "res://Cubes/TreeCube.tscn"},
-			{ CubeType.Galoshes, "res://Cubes/GaloshesHome.tscn"},
+			{ CubeType.Steel, "res://Cubes/CubeScenes/SteelCube.tscn" },
+			{ CubeType.Basic, "res://Cubes/CubeScenes/BasicCube.tscn"},
+			{ CubeType.Tree, "res://Cubes/CubeScenes/TreeCube.tscn"},
+			{ CubeType.Galoshes, "res://Cubes/CubeScenes/GaloshesHome.tscn"},
 		};
 		
 	// Called when the node enters the scene tree for the first time.

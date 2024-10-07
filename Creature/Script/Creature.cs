@@ -7,7 +7,8 @@ public partial class Creature : Node2D
 
 	public Godot.Collections.Dictionary<CreatureType, string> creatureScenes = new Godot.Collections.Dictionary<CreatureType, string> {
 		{ CreatureType.TwoHeadedCrab, "res://Creature/Scene/TwoHeadedCrab.tscn" },
-		{ CreatureType.Galoshes, "res://Creature/Scene/Galoshes.tscn" }
+		{ CreatureType.Galoshes, "res://Creature/Scene/Galoshes.tscn" },
+		{ CreatureType.Beemurai, "res://Creature/Scene/Beemurai.tscn"},
 	};
 
 	[Export]
@@ -165,7 +166,8 @@ public partial class Creature : Node2D
 
 public enum CreatureType {
 	TwoHeadedCrab,
-	Galoshes
+	Galoshes,
+	Beemurai
 }
 
 public enum CreatureFoodType {

@@ -9,13 +9,7 @@ public partial class Cube : Node2D
 	public delegate void MouseExitedEventHandler();
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
-	{
-		var animatedSprite2D = GetNode("BoxBody/Sprite2D");
-		if (animatedSprite2D.GetType().ToString() == "Godot.AnimatedSprite2D")
-		{
-			(animatedSprite2D as AnimatedSprite2D).Play();
-		}
-			
+	{			
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

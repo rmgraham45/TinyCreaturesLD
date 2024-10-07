@@ -1,21 +1,21 @@
 [gd_scene load_steps=6 format=3 uid="uid://cifwybv6pwoi4"]
 
-[ext_resource type="Script" path="res://Cubes/Cube.cs" id="1_tbrxh"]
-[ext_resource type="Script" path="res://Cubes/CubePhysics.cs" id="2_11kky"]
-[ext_resource type="Texture2D" uid="uid://b0ucme60nngl6" path="res://Cubes/CubeArt/GaloshesSummerCabin.png" id="3_3cnln"]
-[ext_resource type="PackedScene" uid="uid://cnqayl16hta1k" path="res://Creature/Creature.tscn" id="4_avj05"]
+[ext_resource type="Script" path="res://Cubes/Cube.cs" id="1_5olw1"]
+[ext_resource type="Script" path="res://Cubes/CubePhysics.cs" id="2_4rvh4"]
+[ext_resource type="Texture2D" uid="uid://b0ucme60nngl6" path="res://Cubes/CubeArt/GaloshesSummerCabin.png" id="3_p7krn"]
+[ext_resource type="PackedScene" uid="uid://cnqayl16hta1k" path="res://Creature/Creature.tscn" id="4_rtxse"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gn5fa"]
 size = Vector2(575, 192)
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_tbrxh")
+script = ExtResource("1_5olw1")
 
 [node name="BoxBody" type="RigidBody2D" parent="."]
 position = Vector2(0, 2)
 input_pickable = true
 can_sleep = false
-script = ExtResource("2_11kky")
+script = ExtResource("2_4rvh4")
 
 [node name="InteriorWalls" type="RigidBody2D" parent="BoxBody"]
 collision_layer = 2
@@ -31,13 +31,13 @@ polygon = PackedVector2Array(-365, -108, 361, -108, 359, 56, 263, 53, 209, 59, 1
 [node name="Sprite2D" type="Sprite2D" parent="BoxBody"]
 position = Vector2(-1.5, -0.5)
 scale = Vector2(3, 3)
-texture = ExtResource("3_3cnln")
+texture = ExtResource("3_p7krn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BoxBody"]
 position = Vector2(-1.50002, -0.999996)
 shape = SubResource("RectangleShape2D_gn5fa")
 
-[node name="Creature" parent="BoxBody" instance=ExtResource("4_avj05")]
+[node name="Creature" parent="BoxBody" instance=ExtResource("4_rtxse")]
 creatureName = "Galoshes"
 creatureDescription = "Dignified, refined - and above all else, fancy."
 creatureLikes = "Apples"
