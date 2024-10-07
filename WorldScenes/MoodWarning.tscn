@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://yj4ac3a07d5s"]
+
+[ext_resource type="Script" path="res://Creature/Script/MoodWarning.cs" id="1_2b2t4"]
+[ext_resource type="Texture2D" uid="uid://125ibmclaxw2" path="res://Creature/Sprite/mood_warning/MoodWarningBubble.png" id="1_d6gx0"]
+[ext_resource type="Texture2D" uid="uid://cfbw6kh3dy05n" path="res://Creature/Sprite/mood_warning/food_warning.png" id="2_5nfuk"]
+[ext_resource type="Texture2D" uid="uid://o12o2ql5xbtg" path="res://Creature/Sprite/mood_warning/happiness_warning.png" id="2_rlh52"]
+[ext_resource type="Texture2D" uid="uid://bxwvh5ff5r7ms" path="res://Creature/Sprite/mood_warning/extreme_warning1.png" id="5_doljo"]
+[ext_resource type="Texture2D" uid="uid://v65j3fnyr12g" path="res://Creature/Sprite/mood_warning/extreme_warning2.png" id="6_voc5e"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_glkii"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_doljo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_voc5e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Control" type="Control" node_paths=PackedStringArray("bubbleTextureRect", "typeTextureRect", "extremeNode")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+mouse_filter = 2
+script = ExtResource("1_2b2t4")
+hungryTexture = ExtResource("2_5nfuk")
+sadTexture = ExtResource("2_rlh52")
+bubbleTextureRect = NodePath("Bubble")
+typeTextureRect = NodePath("TextureRect")
+extremeNode = NodePath("AnimatedSprite2D")
+offset = Vector2(50, -50)
+
+[node name="Bubble" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("1_d6gx0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("2_rlh52")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(9.53674e-07, -1.72853e-06)
+scale = Vector2(1.25, 1.25)
+sprite_frames = SubResource("SpriteFrames_glkii")

@@ -147,12 +147,19 @@ public partial class Creature : Node2D
 				break;
 		}
 
-		if (hunger == 5 || happiness == 0) {
+		if (hunger == 5) {
 			Die();
+		}
+		else if (happiness == 0) {
+			Die();
+		}
+		else {
+			UpdateMoodBubble();
 		}
 	}
 
 	public void Die() {
+		RemoveWarning();
 		cube.QueueFree();
 	}
 
@@ -174,6 +181,47 @@ public partial class Creature : Node2D
 			RigidBody2D floatingBody = (RigidBody2D)this.GetChild(1);
 			floatingBody.ApplyImpulse(new Vector2(80f,80f));
 		}
+	}
+
+	public MoodWarning moodWarning;
+
+	public void UpdateMoodBubble() {
+		if (hunger == 4) {
+			SpawnWarning(WarningType.HungerCritical);
+		}
+		else if (happiness == 1) {
+			SpawnWarning(WarningType.MoodCritical);
+		}
+		else if (hunger == 3) {
+			SpawnWarning(WarningType.Hunger);
+		}
+		else if (happiness == 2) {
+			SpawnWarning(WarningType.Mood);
+		}
+		else {
+			RemoveWarning();
+		}
+	}
+
+	public void SpawnWarning(WarningType warningType) {
+		if (moodWarning != null) {
+			moodWarning.Resolve();
+			moodWarning = null;
+		}
+
+		MoodWarning warning = (MoodWarning) SceneManager.Instance.AddControl("res://WorldScenes/MoodWarning.tscn", rb2d.GlobalPosition);
+		warning.Initiate(warningType, rb2d);
+
+		moodWarning = warning;
+	}
+
+	public void ChangeWarningType(WarningType warningType) {
+		moodWarning.Initiate(warningType, this);
+	}
+
+	public void RemoveWarning() {
+		if (moodWarning != null) moodWarning.Resolve();
+		moodWarning = null;
 	}
 }
 

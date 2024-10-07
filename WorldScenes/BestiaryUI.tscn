@@ -23,9 +23,9 @@ dislikesLabel = NodePath("DislikesLabel")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
-offset_left = 200.0
+offset_left = 272.0
 offset_top = 11.0
-offset_right = 404.0
+offset_right = 476.0
 offset_bottom = 121.0
 scale = Vector2(2, 2)
 texture = ExtResource("2_j316v")
@@ -39,9 +39,9 @@ axis_stretch_vertical = 2
 
 [node name="XButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 563.0
+offset_left = 635.0
 offset_top = 23.0
-offset_right = 595.0
+offset_right = 667.0
 offset_bottom = 55.0
 toggle_mode = true
 icon = ExtResource("3_yh1pq")
@@ -50,9 +50,9 @@ expand_icon = true
 
 [node name="NameLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 217.0
+offset_left = 289.0
 offset_top = 23.0
-offset_right = 545.0
+offset_right = 617.0
 offset_bottom = 81.0
 theme = SubResource("Theme_et1pw")
 theme_override_font_sizes/normal_font_size = 48
@@ -62,10 +62,10 @@ scroll_active = false
 
 [node name="DescLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 217.0
+offset_left = 289.0
 offset_top = 67.0
-offset_right = 588.0
-offset_bottom = 154.0
+offset_right = 660.0
+offset_bottom = 158.0
 theme = SubResource("Theme_et1pw")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
@@ -75,9 +75,9 @@ scroll_active = false
 
 [node name="LikesLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 219.0
+offset_left = 291.0
 offset_top = 150.0
-offset_right = 588.0
+offset_right = 660.0
 offset_bottom = 192.0
 theme = SubResource("Theme_et1pw")
 bbcode_enabled = true
@@ -86,9 +86,9 @@ scroll_active = false
 
 [node name="DislikesLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 219.0
+offset_left = 291.0
 offset_top = 176.0
-offset_right = 588.0
+offset_right = 660.0
 offset_bottom = 218.0
 theme = SubResource("Theme_et1pw")
 bbcode_enabled = true
