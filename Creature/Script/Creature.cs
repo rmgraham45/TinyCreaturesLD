@@ -9,6 +9,7 @@ public partial class Creature : Node2D
 		{ CreatureType.TwoHeadedCrab, "res://Creature/Scene/TwoHeadedCrab.tscn" },
 		{ CreatureType.Galoshes, "res://Creature/Scene/Galoshes.tscn" },
 		{ CreatureType.Beemurai, "res://Creature/Scene/Beemurai.tscn"},
+		{ CreatureType.Squiggles, "res://Creature/Scene/Squiggles.tscn"}
 	};
 
 
@@ -168,10 +169,8 @@ public partial class Creature : Node2D
 
 	private void _on_timer_timeout()
 	{
-		GD.Print("timer");
 		if (floating)
 		{
-			GD.Print("FORCE");
 			RigidBody2D floatingBody = (RigidBody2D)this.GetChild(1);
 			floatingBody.ApplyImpulse(new Vector2(80f,80f));
 		}
@@ -181,7 +180,8 @@ public partial class Creature : Node2D
 public enum CreatureType {
 	TwoHeadedCrab,
 	Galoshes,
-	Beemurai
+	Beemurai,
+	Squiggles
 }
 
 public enum CreatureFoodType {

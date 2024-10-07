@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://das0ss0xkb5d8"]
+
+[ext_resource type="Script" path="res://Cubes/Cube.cs" id="1_a64dy"]
+[ext_resource type="Script" path="res://Cubes/CubePhysics.cs" id="2_gk13d"]
+[ext_resource type="Texture2D" uid="uid://lrwhl8isj0lw" path="res://Cubes/CubeArt/Eldritch.png" id="3_c3jv2"]
+[ext_resource type="PackedScene" uid="uid://cnqayl16hta1k" path="res://Creature/Creature.tscn" id="4_r8i7c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gn5fa"]
+size = Vector2(359, 255)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_a64dy")
+
+[node name="BoxBody" type="RigidBody2D" parent="."]
+input_pickable = true
+can_sleep = false
+script = ExtResource("2_gk13d")
+
+[node name="InteriorWalls" type="RigidBody2D" parent="BoxBody"]
+collision_layer = 2
+collision_mask = 2
+can_sleep = false
+freeze = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BoxBody/InteriorWalls"]
+build_mode = 1
+polygon = PackedVector2Array(-153, -100, 154, -100, 154, 103, -153, 103)
+
+[node name="Sprite2D" type="Sprite2D" parent="BoxBody"]
+position = Vector2(-1.5, -0.5)
+scale = Vector2(4, 4)
+texture = ExtResource("3_c3jv2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoxBody"]
+position = Vector2(-1.5, -0.5)
+shape = SubResource("RectangleShape2D_gn5fa")
+
+[node name="Creature" parent="BoxBody" instance=ExtResource("4_r8i7c")]
+creatureName = "Squiggles"
+creatureDescription = "A cuddly, tentacley blob"
+creatureLikes = "Hugs"
+creatureDislikes = "Being scared"
+floating = true
+creatureType = 3
+foodType = 3
+happiness = 5
+
+[node name="CountdownTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="MouseEntered" from="BoxBody" to="BoxBody" method="_on_mouse_entered"]
+[connection signal="MouseExited" from="BoxBody" to="BoxBody" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="BoxBody" to="." method="_on_box_body_mouse_entered"]
+[connection signal="mouse_exited" from="BoxBody" to="." method="_on_box_body_mouse_exited"]
+[connection signal="timeout" from="CountdownTimer" to="." method="_on_countdown_timer_timeout"]

@@ -11,6 +11,7 @@ public partial class Lootbox : Control
 			{ CubeType.Basic, "res://Cubes/CubeScenes/BasicCube.tscn"},
 			{ CubeType.Tree, "res://Cubes/CubeScenes/TreeCube.tscn"},
 			{ CubeType.Galoshes, "res://Cubes/CubeScenes/GaloshesHome.tscn"},
+			{ CubeType.Squiggles, "res://Cubes/CubeScenes/SquiggleCube.tscn"}
 		};
 		
 	private Node2D banner;
@@ -74,5 +75,6 @@ public enum CubeType {
 	Basic,
 	Steel,
 	Tree,
-	Galoshes
+	Galoshes,
+	Squiggles
 }
