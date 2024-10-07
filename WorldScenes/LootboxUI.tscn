@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://b1cqad0t56y7f"]
+[gd_scene load_steps=4 format=3 uid="uid://dose2wal355wc"]
 
 [ext_resource type="Script" path="res://UI/Lootbox/Lootbox.cs" id="1_oh6k0"]
 [ext_resource type="Texture2D" uid="uid://cpuq5ulqeap0i" path="res://UI/ui_block_base.png" id="2_2lhtp"]

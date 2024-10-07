@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b5ltqt5cjjfw3"]
+[gd_scene load_steps=9 format=3 uid="uid://0ysqqm1e5bkb"]
 
 [ext_resource type="Script" path="res://Creature/Scene/CreatureClickSignaler.cs" id="1_kgph1"]
 [ext_resource type="Texture2D" uid="uid://dwq0pwj34bimt" path="res://Creature/Sprite/Galoshes/galoshes1.png" id="2_dfutw"]

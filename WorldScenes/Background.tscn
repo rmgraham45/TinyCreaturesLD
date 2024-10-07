@@ -48,7 +48,7 @@ sources/1 = SubResource("TileSetAtlasSource_d2kd2")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_am8vk"]
 size = Vector2(779.5, 79.5)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-2, 371)
