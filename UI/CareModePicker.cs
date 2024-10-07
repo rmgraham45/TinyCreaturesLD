@@ -6,7 +6,7 @@ public partial class CareModePicker : Control
 {
 
 	[Export]
-	public Button petButton, meatButton, veggieButton, trashButton, gunButton;
+	public Button petButton, meatButton, veggieButton, trashButton, gunButton, learnButton;
 
 	private List<Button> buttons = new List<Button>();
 
@@ -18,6 +18,7 @@ public partial class CareModePicker : Control
 		buttons.Add(veggieButton);
 		buttons.Add(trashButton);
 		buttons.Add(gunButton);
+		buttons.Add(learnButton);
 
 		_on_pet_button_pressed();
 	}
@@ -64,11 +65,17 @@ public partial class CareModePicker : Control
 		DeselectAllOthers(gunButton);
 	}
 
+	public void _on_learn_button_pressed() {
+		currentIntent = Intent.Learn;
+		DeselectAllOthers(learnButton);
+	}
+
 	public enum Intent {
 		Pet,
 		Meat,
 		Veggie,
 		Trash,
-		Gun
+		Gun,
+		Learn
 	}
 }

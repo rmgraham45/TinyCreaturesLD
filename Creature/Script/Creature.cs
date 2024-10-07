@@ -66,7 +66,7 @@ public partial class Creature : Node2D
 	
 	private void MouseClick(Node viewport, InputEvent @event, long shapeIdx) {
 		if (@event is InputEventMouseButton click) {
-			if (click.Pressed) {
+			if (click.Pressed && click.ButtonIndex == MouseButton.Right) {
 				Interact();
 			}
 		}
