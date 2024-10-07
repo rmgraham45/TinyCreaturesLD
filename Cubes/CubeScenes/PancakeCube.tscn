@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwcf775fmrat"]
+[gd_scene load_steps=6 format=3 uid="uid://kpvuevsn6e1k"]
 
 [ext_resource type="Script" path="res://Cubes/Cube.cs" id="1_q3dwq"]
 [ext_resource type="Script" path="res://Cubes/CubePhysics.cs" id="2_fcs84"]
@@ -8,7 +8,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gn5fa"]
 size = Vector2(161, 161)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" groups=["Cubes"]]
 script = ExtResource("1_q3dwq")
 
 [node name="BoxBody" type="RigidBody2D" parent="."]

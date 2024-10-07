@@ -29,6 +29,10 @@ window/size/viewport_height=980
 
 project/assembly_name="TinyCreaturesLD"
 
+[global_group]
+
+Cubes=""
+
 [input]
 
 Click={

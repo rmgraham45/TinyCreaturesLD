@@ -8,7 +8,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gn5fa"]
 size = Vector2(575, 192)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" groups=["Cubes"]]
 script = ExtResource("1_5olw1")
 
 [node name="BoxBody" type="RigidBody2D" parent="."]

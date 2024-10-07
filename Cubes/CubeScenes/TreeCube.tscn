@@ -149,7 +149,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gn5fa"]
 size = Vector2(192, 192)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" groups=["Cubes"]]
 script = ExtResource("1_bpr48")
 
 [node name="BoxBody" type="RigidBody2D" parent="."]
@@ -188,7 +188,6 @@ floating = true
 creatureType = 2
 foodType = 2
 happiness = 5
-hungerRate = 2.0
 
 [node name="CountdownTimer" type="Timer" parent="."]
 wait_time = 3.0

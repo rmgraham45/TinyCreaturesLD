@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://d0y14perud4vh" path="res://Creature/Sprite/creature_treatment/glock.png" id="6_gp15f"]
 [ext_resource type="Texture2D" uid="uid://vemnq5di5vxn" path="res://Creature/Sprite/creature_treatment/book.png" id="8_nfiw1"]
 
-[node name="CareUi" type="Control" node_paths=PackedStringArray("petButton", "meatButton", "veggieButton", "trashButton", "gunButton", "learnButton")]
+[node name="CareUi" type="Control" node_paths=PackedStringArray("petButton", "meatButton", "veggieButton", "gunButton", "learnButton")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 900.0
@@ -18,7 +18,6 @@ script = ExtResource("1_bgay8")
 petButton = NodePath("PetButton")
 meatButton = NodePath("MeatButton")
 veggieButton = NodePath("VeggieButton")
-trashButton = NodePath("")
 gunButton = NodePath("GunButton")
 learnButton = NodePath("LearnButton")
 

@@ -1,23 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6o4q001u0uyu"]
+[gd_scene load_steps=9 format=3 uid="uid://b6o4q001u0uyu"]
 
-[ext_resource type="Script" path="res://UI/CareModePicker.cs" id="1_5p1v3"]
+[ext_resource type="Script" path="res://UI/SettingsUI.cs" id="1_msd1h"]
 [ext_resource type="Texture2D" uid="uid://cpuq5ulqeap0i" path="res://UI/ui_block_base.png" id="2_vw1sm"]
 [ext_resource type="Texture2D" uid="uid://dx8ka5i6eaog0" path="res://UI/help.png" id="3_8naxf"]
 [ext_resource type="Texture2D" uid="uid://cuaelt2bso8oh" path="res://UI/reset.png" id="4_o0mda"]
 [ext_resource type="Texture2D" uid="uid://dp1dgyvxffqgi" path="res://UI/sound_off.png" id="5_3up1y"]
+[ext_resource type="FontFile" uid="uid://pot2as5dro5c" path="res://UI/Font/ARCADECLASSIC.TTF" id="6_s1vgv"]
+[ext_resource type="Texture2D" uid="uid://gl42gxbmj72k" path="res://UI/x.png" id="7_ccdtv"]
 
-[node name="SettingsUi" type="Control" node_paths=PackedStringArray("petButton", "meatButton", "veggieButton", "gunButton", "learnButton")]
+[sub_resource type="Theme" id="Theme_s7jx5"]
+default_font = ExtResource("6_s1vgv")
+default_font_size = 16
+
+[node name="SettingsUi" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 900.0
 offset_bottom = 981.0
 mouse_filter = 2
-script = ExtResource("1_5p1v3")
-petButton = NodePath("HelpButton")
-meatButton = NodePath("ResetButton")
-veggieButton = NodePath("MuteButton")
-gunButton = NodePath("")
-learnButton = NodePath("")
+script = ExtResource("1_msd1h")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
@@ -41,6 +42,7 @@ offset_left = 812.0
 offset_top = 754.0
 offset_right = 876.0
 offset_bottom = 818.0
+scale = Vector2(1.00223, 1.01344)
 toggle_mode = true
 icon = ExtResource("3_8naxf")
 icon_alignment = 1
@@ -68,6 +70,101 @@ icon = ExtResource("5_3up1y")
 icon_alignment = 1
 expand_icon = true
 
-[connection signal="pressed" from="HelpButton" to="." method="_on_pet_button_pressed"]
-[connection signal="pressed" from="ResetButton" to="." method="_on_meat_button_pressed"]
-[connection signal="pressed" from="MuteButton" to="." method="_on_veggie_button_pressed"]
+[node name="Tutorial" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Tutorial"]
+layout_mode = 0
+offset_left = 154.0
+offset_top = 124.0
+offset_right = 463.0
+offset_bottom = 484.0
+scale = Vector2(2, 2)
+texture = ExtResource("2_vw1sm")
+region_rect = Rect2(0, 0, 48, 48)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Tutorial/NinePatchRect2"]
+layout_mode = 0
+offset_left = 15.5
+offset_top = 10.0
+offset_right = 299.5
+offset_bottom = 65.0
+theme = SubResource("Theme_s7jx5")
+theme_override_font_sizes/normal_font_size = 32
+text = "How  to  play"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Tutorial/NinePatchRect2"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 45.0
+offset_right = 298.0
+offset_bottom = 179.0
+theme = SubResource("Theme_s7jx5")
+bbcode_enabled = true
+text = "- Open  a  [color=#7CFC00]lootbox[/color]  to  get  a  new  creature!
+
+"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Tutorial/NinePatchRect2"]
+layout_mode = 0
+offset_left = 15.5
+offset_top = 93.5
+offset_right = 299.5
+offset_bottom = 227.5
+theme = SubResource("Theme_s7jx5")
+bbcode_enabled = true
+text = "- Use  the  [color=#FF6347]bestiary[/color]  to  learn  what  your  new  friend  needs!"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Tutorial/NinePatchRect2"]
+layout_mode = 0
+offset_left = 17.5
+offset_top = 142.5
+offset_right = 301.5
+offset_bottom = 276.5
+theme = SubResource("Theme_s7jx5")
+bbcode_enabled = true
+text = "- Build  the  [color=#9400D3]tallest  tower  possible[/color]  while  also  keeping  your  creatures  fed  and  happy!"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Tutorial/NinePatchRect2"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 216.0
+offset_right = 298.0
+offset_bottom = 350.0
+theme = SubResource("Theme_s7jx5")
+bbcode_enabled = true
+text = "Right  click  on  a  creature  to  interact  with  it"
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="Tutorial/NinePatchRect2"]
+layout_mode = 0
+offset_left = 14.5
+offset_top = 256.5
+offset_right = 298.5
+offset_bottom = 390.5
+theme = SubResource("Theme_s7jx5")
+bbcode_enabled = true
+text = "arrow  keys  or  wasd  to  move  the  camera!  shift  to  move  faster!"
+
+[node name="TutorialXButton" type="Button" parent="Tutorial/NinePatchRect2"]
+layout_mode = 0
+offset_left = 267.5
+offset_top = 8.5
+offset_right = 299.5
+offset_bottom = 40.5
+icon = ExtResource("7_ccdtv")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="HelpButton" to="." method="_on_help_button_pressed"]
+[connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="MuteButton" to="." method="_on_mute_button_pressed"]
+[connection signal="pressed" from="Tutorial/NinePatchRect2/TutorialXButton" to="." method="_on_tutorial_x_button_pressed"]

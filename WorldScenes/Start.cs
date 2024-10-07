@@ -8,10 +8,9 @@ public partial class Start : Node2D
 	{	
 		SceneManager.Instance.AddScene("res://WorldScenes/Background.tscn");
 		SceneManager.Instance.AddScene("res://WorldScenes/Banner.tscn", new Vector2(450, 946));
-		SceneManager.Instance.AddControl("res://UI/MainUI.tscn");
-		SceneManager.Instance.AddControl("res://WorldScenes/SettingsUI.tscn");
-		SceneManager.Instance.AddControl("res://WorldScenes/BestiaryUI.tscn");
 		SceneManager.Instance.AddControl("res://WorldScenes/Music.tscn");
+		SceneManager.Instance.AddControl("res://UI/MainUI.tscn");
+		SceneManager.Instance.AddControl("res://WorldScenes/BestiaryUI.tscn");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

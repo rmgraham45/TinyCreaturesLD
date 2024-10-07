@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dgq462khei7sc"]
+[gd_scene load_steps=11 format=3 uid="uid://bg0e1a7a7ap25"]
 
 [ext_resource type="Script" path="res://Creature/Scene/CreatureClickSignaler.cs" id="1_q7i1o"]
 [ext_resource type="Texture2D" uid="uid://b5yc5y21kad08" path="res://Creature/Sprite/Beemurai/Bee-Sheet.png" id="2_rhdy7"]
