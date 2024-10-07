@@ -29,10 +29,6 @@ public partial class Lootbox : Control
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		if (Input.IsActionJustPressed("Space"))
-		{
-			SceneManager.Instance.AddScene(cubeScenes[(CubeType.Tree)], new Vector2(banner.GlobalPosition.X, banner.GlobalPosition.Y - spawnDistance));
-		}
 	}
 
 	[Export]
