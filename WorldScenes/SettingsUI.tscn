@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6o4q001u0uyu"]
+
+[ext_resource type="Script" path="res://UI/CareModePicker.cs" id="1_5p1v3"]
+[ext_resource type="Texture2D" uid="uid://cpuq5ulqeap0i" path="res://UI/ui_block_base.png" id="2_vw1sm"]
+[ext_resource type="Texture2D" uid="uid://dx8ka5i6eaog0" path="res://UI/help.png" id="3_8naxf"]
+[ext_resource type="Texture2D" uid="uid://cuaelt2bso8oh" path="res://UI/reset.png" id="4_o0mda"]
+[ext_resource type="Texture2D" uid="uid://dp1dgyvxffqgi" path="res://UI/sound_off.png" id="5_3up1y"]
+
+[node name="SettingsUi" type="Control" node_paths=PackedStringArray("petButton", "meatButton", "veggieButton", "gunButton", "learnButton")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 900.0
+offset_bottom = 981.0
+mouse_filter = 2
+script = ExtResource("1_5p1v3")
+petButton = NodePath("HelpButton")
+meatButton = NodePath("ResetButton")
+veggieButton = NodePath("MuteButton")
+gunButton = NodePath("")
+learnButton = NodePath("")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 797.0
+offset_top = 740.0
+offset_right = 844.0
+offset_bottom = 856.0
+scale = Vector2(2, 2)
+texture = ExtResource("2_vw1sm")
+region_rect = Rect2(0, 0, 48, 48)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="HelpButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 812.0
+offset_top = 754.0
+offset_right = 876.0
+offset_bottom = 818.0
+toggle_mode = true
+icon = ExtResource("3_8naxf")
+icon_alignment = 1
+expand_icon = true
+
+[node name="ResetButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 812.0
+offset_top = 823.0
+offset_right = 876.0
+offset_bottom = 887.0
+toggle_mode = true
+icon = ExtResource("4_o0mda")
+icon_alignment = 1
+expand_icon = true
+
+[node name="MuteButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 812.0
+offset_top = 891.0
+offset_right = 876.0
+offset_bottom = 955.0
+toggle_mode = true
+icon = ExtResource("5_3up1y")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="HelpButton" to="." method="_on_pet_button_pressed"]
+[connection signal="pressed" from="ResetButton" to="." method="_on_meat_button_pressed"]
+[connection signal="pressed" from="MuteButton" to="." method="_on_veggie_button_pressed"]

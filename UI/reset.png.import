@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw2a763j8rv7i"
-path="res://.godot/imported/banner2.png-2ca58c3366cd60b70dc98292075725bf.ctex"
+uid="uid://cuaelt2bso8oh"
+path="res://.godot/imported/reset.png-50cbd413077275305c564f7181f88ba1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/HighScoreBanner/banner2.png"
-dest_files=["res://.godot/imported/banner2.png-2ca58c3366cd60b70dc98292075725bf.ctex"]
+source_file="res://UI/reset.png"
+dest_files=["res://.godot/imported/reset.png-50cbd413077275305c564f7181f88ba1.ctex"]
 
 [params]
 

@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://d0p3bvdsxbxq7"]
+[gd_scene load_steps=8 format=3 uid="uid://d0p3bvdsxbxq7"]
 
 [ext_resource type="Script" path="res://UI/CareModePicker.cs" id="1_bgay8"]
 [ext_resource type="Texture2D" uid="uid://cpuq5ulqeap0i" path="res://UI/ui_block_base.png" id="1_o8fpv"]
 [ext_resource type="Texture2D" uid="uid://d1h5l3243igce" path="res://Creature/Sprite/creature_treatment/hand.png" id="2_18jy8"]
 [ext_resource type="Texture2D" uid="uid://dmmgnuo7mfmv0" path="res://Creature/Sprite/creature_treatment/flakes_meat.png" id="3_j28vy"]
 [ext_resource type="Texture2D" uid="uid://byhiufmc51yq7" path="res://Creature/Sprite/creature_treatment/flakes_veggie.png" id="4_pnfo4"]
-[ext_resource type="Texture2D" uid="uid://dhe3drdem2a8s" path="res://Creature/Sprite/creature_treatment/trashbag.png" id="5_fybab"]
 [ext_resource type="Texture2D" uid="uid://d0y14perud4vh" path="res://Creature/Sprite/creature_treatment/glock.png" id="6_gp15f"]
 [ext_resource type="Texture2D" uid="uid://vemnq5di5vxn" path="res://Creature/Sprite/creature_treatment/book.png" id="8_nfiw1"]
 
@@ -19,7 +18,7 @@ script = ExtResource("1_bgay8")
 petButton = NodePath("PetButton")
 meatButton = NodePath("MeatButton")
 veggieButton = NodePath("VeggieButton")
-trashButton = NodePath("TrashButton")
+trashButton = NodePath("")
 gunButton = NodePath("GunButton")
 learnButton = NodePath("LearnButton")
 
@@ -28,7 +27,7 @@ layout_mode = 0
 offset_left = 797.0
 offset_top = 7.0
 offset_right = 844.0
-offset_bottom = 224.0
+offset_bottom = 191.0
 scale = Vector2(2, 2)
 texture = ExtResource("1_o8fpv")
 region_rect = Rect2(0, 0, 48, 48)
@@ -72,23 +71,12 @@ icon = ExtResource("4_pnfo4")
 icon_alignment = 1
 expand_icon = true
 
-[node name="TrashButton" type="Button" parent="."]
+[node name="GunButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 812.0
 offset_top = 226.0
 offset_right = 876.0
 offset_bottom = 290.0
-toggle_mode = true
-icon = ExtResource("5_fybab")
-icon_alignment = 1
-expand_icon = true
-
-[node name="GunButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 812.0
-offset_top = 294.0
-offset_right = 876.0
-offset_bottom = 358.0
 toggle_mode = true
 icon = ExtResource("6_gp15f")
 icon_alignment = 1
@@ -97,10 +85,9 @@ expand_icon = true
 [node name="LearnButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 812.0
-offset_top = 362.0
+offset_top = 294.0
 offset_right = 876.0
-offset_bottom = 426.0
-rotation = 0.01191
+offset_bottom = 358.0
 toggle_mode = true
 icon = ExtResource("8_nfiw1")
 icon_alignment = 1
@@ -109,6 +96,5 @@ expand_icon = true
 [connection signal="pressed" from="PetButton" to="." method="_on_pet_button_pressed"]
 [connection signal="pressed" from="MeatButton" to="." method="_on_meat_button_pressed"]
 [connection signal="pressed" from="VeggieButton" to="." method="_on_veggie_button_pressed"]
-[connection signal="pressed" from="TrashButton" to="." method="_on_trash_button_pressed"]
 [connection signal="pressed" from="GunButton" to="." method="_on_gun_button_pressed"]
 [connection signal="pressed" from="LearnButton" to="." method="_on_learn_button_pressed"]
