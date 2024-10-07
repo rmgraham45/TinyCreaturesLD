@@ -13,9 +13,16 @@ public partial class Lootbox : Control
 			{ CubeType.Galoshes, "res://Cubes/GaloshesHome.tscn"},
 		};
 		
+	private Node2D banner;
+	private Timer cooldownTimer;
+
+	private bool onCooldown = false;
+		
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		banner = GetTree().Root.GetNode<Node2D>("SceneManager/Banner");
+		cooldownTimer = GetNode<Timer>("CooldownTimer");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,9 +31,13 @@ public partial class Lootbox : Control
 	}
 
 	[Export]
-	public Vector2 spawnTarget;
+	public float spawnDistance = 1200;
 	
 	public void _on_loot_button_pressed() {
+		if (onCooldown) {
+			return;
+		}
+
 		Random rand = new Random();
 		int index = rand.Next(0, cubeScenes.Count);
 		string scenePath = null;
@@ -43,8 +54,15 @@ public partial class Lootbox : Control
 
 		if (scenePath != null)
 		{
-			SceneManager.Instance.AddScene(scenePath, spawnTarget);
+			SceneManager.Instance.AddScene(scenePath, new Vector2(banner.GlobalPosition.X, banner.GlobalPosition.Y - spawnDistance));
 		}
+		
+		onCooldown = true;
+		cooldownTimer.Start();
+	}
+
+	public void _on_cooldown_timer_timeout() {
+		onCooldown = false;
 	}
 }
 

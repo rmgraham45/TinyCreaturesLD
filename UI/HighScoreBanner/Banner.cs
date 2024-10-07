@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 public partial class Banner : Node2D
 {
@@ -7,21 +6,26 @@ public partial class Banner : Node2D
 	[Export]
 	public Vector2 startingPos;
 	[Export]
-	public float lerpSpeed = 0.4f;
+	public Vector2 offset;
+	[Export]
+	public float lerpSpeed = 5f;
 	[Export]
 	public float scoreScaleMultiplier = 1f;
 
 	[Export]
 	public Vector2 targetPos;
 
-	public float currentHighestY;
+	[Export]
 	public RichTextLabel highScoreLabel;
 
 	public override void _Ready()
 	{
+		Visible = false;
+
 		startingPos = GlobalPosition;
-		currentHighestY = startingPos.Y;
 		targetPos = startingPos;
+
+		GD.Print("starting pos: " + startingPos);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -31,27 +35,26 @@ public partial class Banner : Node2D
 		GlobalPosition = GlobalPosition.Lerp(targetPos, lerpSpeed);
 	}
 	
-	public void UpdateHighest(Vector2 highestPos)
+	public void UpdateHighest(float maxY)
 	{
-		GD.Print("new high score! position: " + highestPos.Y);
-		currentHighestY = highestPos.Y;
-		highScoreLabel.Text = ConvertYToScore(currentHighestY).ToString("0.0");
+		Visible = true;
 
-		targetPos = new Vector2(GlobalPosition.X, currentHighestY);
+		GD.Print("new high score! position: " + maxY);
+		targetPos = new Vector2(GlobalPosition.X, maxY) + offset;
+
+		highScoreLabel.Text = "[center]" + ConvertYToScore(maxY).ToString("0.0") + "[/center]";
 	}
 
 	public float ConvertYToScore(float y) {
-		return 0;
+		// 100 pixels = 1 point
+		return (startingPos.Y - y)/100;
 	}
 
-	public void AttemptHighest(Vector2 pos)
+	public void AttemptHighest(float maxY)
 	{
-		if (pos.Y < currentHighestY)
+		if (maxY < targetPos.Y)
 		{
-			UpdateHighest(pos);
-		}
-		else {
-			GD.Print("not high enough: " + pos.Y + " vs " + currentHighestY);
+			UpdateHighest(maxY);
 		}
 	}
 }

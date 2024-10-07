@@ -8,7 +8,7 @@ public partial class CubePhysics : RigidBody2D
 	[Signal]
 	public delegate void MouseExitedEventHandler(string NodeName);
 	private bool grabbable = false;
-	private bool grabbed = false;
+	public bool grabbed = false;
 	const int SPRING_CONSTANT = 10;
 
 	private float storedGravity;
