@@ -36,6 +36,11 @@ position = Vector2(-1.5, -0.5)
 shape = SubResource("RectangleShape2D_gn5fa")
 
 [node name="Creature" parent="BoxBody" instance=ExtResource("4_qtrdr")]
+creatureName = "Gemma"
+creatureDescription = "Shiny just like your future"
+creatureLikes = "Itself"
+creatureDislikes = "Dirt"
+creatureType = 5
 foodType = 1
 happiness = 3
 likesTickled = false

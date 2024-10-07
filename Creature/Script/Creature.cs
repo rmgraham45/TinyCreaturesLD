@@ -5,11 +5,14 @@ using Godot;
 public partial class Creature : Node2D 
 {
 
+	public const string creatureLoc = "res://Creature/Scene/";
 	public Godot.Collections.Dictionary<CreatureType, string> creatureScenes = new Godot.Collections.Dictionary<CreatureType, string> {
-		{ CreatureType.TwoHeadedCrab, "res://Creature/Scene/TwoHeadedCrab.tscn" },
-		{ CreatureType.Galoshes, "res://Creature/Scene/Galoshes.tscn" },
-		{ CreatureType.Beemurai, "res://Creature/Scene/Beemurai.tscn"},
-		{ CreatureType.Squiggles, "res://Creature/Scene/Squiggles.tscn"}
+		{ CreatureType.TwoHeadedCrab, creatureLoc + "TwoHeadedCrab.tscn" },
+		{ CreatureType.Galoshes, creatureLoc + "Galoshes.tscn" },
+		{ CreatureType.Beemurai, creatureLoc + "Beemurai.tscn"},
+		{ CreatureType.Squiggles, creatureLoc + "Squiggles.tscn"},
+		{ CreatureType.Pancake, creatureLoc + "Pancake.tscn"},
+		{ CreatureType.Gemma, creatureLoc + "Gemma.tscn"}
 	};
 
 
@@ -229,7 +232,9 @@ public enum CreatureType {
 	TwoHeadedCrab,
 	Galoshes,
 	Beemurai,
-	Squiggles
+	Squiggles,
+	Pancake,
+	Gemma
 }
 
 public enum CreatureFoodType {
