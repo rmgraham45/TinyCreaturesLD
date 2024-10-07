@@ -15,13 +15,20 @@ public partial class Camera : Camera2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		int speed = 5;
+
+		if (Input.IsActionPressed("Shift"))
+		{
+			speed *= 2;
+		}
+
 		if (Input.IsActionPressed("Up"))
 		{
-			this.Position = this.Position - new Vector2(0, 5);
+			this.Position = this.Position - new Vector2(0, speed);
 		}
 		if (Input.IsActionPressed("Down"))
 		{
-			this.Position = this.Position + new Vector2(0, 5);
+			this.Position = this.Position + new Vector2(0, speed);
 		}
 
 		if (this.Position.Y > initialPos.Y)

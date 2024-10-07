@@ -7,6 +7,8 @@ public partial class SettingsUI : Control
 
 	public Control tutorial;
 	public Music music;
+	
+	public Button muteButton;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -15,6 +17,8 @@ public partial class SettingsUI : Control
 		tutorial.Visible = false;
 
 		music = GetTree().Root.GetNode<Music>("SceneManager/Music");
+		
+		muteButton = GetNode<Button>("MuteButton");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -28,13 +32,13 @@ public partial class SettingsUI : Control
 	}
 
 	public void ResetGame() {
-		GetTree().ReloadCurrentScene();
-
 		music.QueueFree();
 
-		foreach (Node node in GetTree().GetNodesInGroup("Cubes")) {
+		foreach (Node node in GetTree().GetNodesInGroup("KillOnReset")) {
 			node.QueueFree();
 		}
+
+		GetTree().ReloadCurrentScene();
 	}
 
 	public void _on_tutorial_x_button_pressed() {
@@ -49,17 +53,16 @@ public partial class SettingsUI : Control
 		ResetGame();
 	}
 
-	public Button muteButton;
 	[Export]
 	public Texture2D muteTexture, unmuteTexture;
 
 	public void _on_mute_button_pressed() {
 		if (music.player.StreamPaused) {
 			music.Play();
-			muteButton.Icon = muteTexture;
+			muteButton.Icon = unmuteTexture;
 		} else {
 			music.Pause();
-			muteButton.Icon = unmuteTexture;
+			muteButton.Icon = muteTexture;
 		}
 	}
 }

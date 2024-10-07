@@ -1,20 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://kpvuevsn6e1k"]
+[gd_scene load_steps=6 format=3 uid="uid://burd6yajs2s8o"]
 
-[ext_resource type="Script" path="res://Cubes/Cube.cs" id="1_q3dwq"]
-[ext_resource type="Script" path="res://Cubes/CubePhysics.cs" id="2_fcs84"]
-[ext_resource type="Texture2D" uid="uid://djdk4quibs41s" path="res://Cubes/CubeArt/PancakeCube.png" id="3_ajkda"]
-[ext_resource type="PackedScene" uid="uid://cnqayl16hta1k" path="res://Creature/Creature.tscn" id="4_6qs4u"]
+[ext_resource type="Script" path="res://Cubes/Cube.cs" id="1_gam88"]
+[ext_resource type="Script" path="res://Cubes/CubePhysics.cs" id="2_2sfvn"]
+[ext_resource type="Texture2D" uid="uid://c8ce52cpq7jkd" path="res://Cubes/CubeArt/CactusDesert.png" id="3_t4tu8"]
+[ext_resource type="PackedScene" uid="uid://cnqayl16hta1k" path="res://Creature/Creature.tscn" id="4_8qygk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gn5fa"]
-size = Vector2(161, 161)
+size = Vector2(356, 192)
 
 [node name="Node2D" type="Node2D" groups=["KillOnReset"]]
-script = ExtResource("1_q3dwq")
+script = ExtResource("1_gam88")
 
 [node name="BoxBody" type="RigidBody2D" parent="."]
+position = Vector2(0, 2)
 input_pickable = true
 can_sleep = false
-script = ExtResource("2_fcs84")
+script = ExtResource("2_2sfvn")
 
 [node name="InteriorWalls" type="RigidBody2D" parent="BoxBody"]
 collision_layer = 2
@@ -23,29 +24,31 @@ can_sleep = false
 freeze = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BoxBody/InteriorWalls"]
+position = Vector2(-117.25, -28.75)
+scale = Vector2(12.475, 3.625)
 build_mode = 1
-polygon = PackedVector2Array(-79, -78, 76, -78, 76, 77, -79, 77)
+polygon = PackedVector2Array(-4.06814, -15.2414, 22.3848, -15.2414, 22.3848, 22.8276, 20.3808, 20.6207, 12.3647, 18.9655, 4.18838, 17.5862, -1.02204, 21.1724, -4.06814, 25.3103)
 
 [node name="Sprite2D" type="Sprite2D" parent="BoxBody"]
 position = Vector2(-1.5, -0.5)
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("3_ajkda")
+scale = Vector2(3, 3)
+texture = ExtResource("3_t4tu8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BoxBody"]
-visible = false
-position = Vector2(-1.5, -0.5)
+position = Vector2(-2, -0.999996)
 shape = SubResource("RectangleShape2D_gn5fa")
 
-[node name="Creature" parent="BoxBody" instance=ExtResource("4_6qs4u")]
-creatureName = "Pancake"
-creatureDescription = "Bestest fluffy friend"
-creatureLikes = "People"
-creatureDislikes = "Being alone"
-creatureType = 4
-foodType = 1
+[node name="Creature" parent="BoxBody" instance=ExtResource("4_8qygk")]
+creatureName = "Cactus Bro"
+creatureDescription = "Bro."
+creatureLikes = "Sunglasses"
+creatureDislikes = "Everything"
+floating = true
+creatureType = 6
+foodType = 2
 happiness = 5
-hunger = 3.0
-needsRate = 1.2
+needsRate = 0.3
+likesTickled = false
 
 [node name="CountdownTimer" type="Timer" parent="."]
 wait_time = 3.0

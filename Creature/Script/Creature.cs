@@ -12,7 +12,8 @@ public partial class Creature : Node2D
 		{ CreatureType.Beemurai, creatureLoc + "Beemurai.tscn"},
 		{ CreatureType.Squiggles, creatureLoc + "Squiggles.tscn"},
 		{ CreatureType.Pancake, creatureLoc + "Pancake.tscn"},
-		{ CreatureType.Gemma, creatureLoc + "Gemma.tscn"}
+		{ CreatureType.Gemma, creatureLoc + "Gemma.tscn"},
+		{ CreatureType.Cactus, creatureLoc + "CactusBro.tscn"}
 	};
 
 
@@ -247,7 +248,8 @@ public enum CreatureType {
 	Beemurai,
 	Squiggles,
 	Pancake,
-	Gemma
+	Gemma,
+	Cactus
 }
 
 public enum CreatureFoodType {

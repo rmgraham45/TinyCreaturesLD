@@ -8,11 +8,11 @@ public partial class Lootbox : Control
 	public Godot.Collections.Dictionary<CubeType, string> cubeScenes = 
 		new Godot.Collections.Dictionary<CubeType, string> {
 			{ CubeType.Steel, cubeLoc + "SteelCube.tscn" },
-			{ CubeType.Basic, cubeLoc + "BasicCube.tscn"},
 			{ CubeType.Tree, cubeLoc + "TreeCube.tscn"},
 			{ CubeType.Galoshes, cubeLoc + "GaloshesHome.tscn"},
 			{ CubeType.Squiggles, cubeLoc + "SquiggleCube.tscn"},
-			{ CubeType.Pancake, cubeLoc + "PancakeCube.tscn"}
+			{ CubeType.Pancake, cubeLoc + "PancakeCube.tscn"},
+			{ CubeType.Cactus, cubeLoc + "CactusDesert.tscn"}
 		};
 		
 	private Node2D banner;
@@ -75,5 +75,6 @@ public enum CubeType {
 	Galoshes,
 	Squiggles,
 	Pancake,
-	Gemma
+	Gemma,
+	Cactus
 }

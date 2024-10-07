@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://pjxyhhpic5ws"]
+[gd_scene load_steps=11 format=3 uid="uid://b5l458i41l7eb"]
 
 [ext_resource type="Script" path="res://Creature/Scene/CreatureClickSignaler.cs" id="1_w0cfe"]
 [ext_resource type="Texture2D" uid="uid://bccqau1pgaj56" path="res://Creature/Sprite/Pancake/Pancake-Sheet.png" id="2_t4573"]

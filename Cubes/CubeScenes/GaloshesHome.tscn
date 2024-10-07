@@ -8,7 +8,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gn5fa"]
 size = Vector2(575, 192)
 
-[node name="Node2D" type="Node2D" groups=["Cubes"]]
+[node name="Node2D" type="Node2D" groups=["KillOnReset"]]
 script = ExtResource("1_5olw1")
 
 [node name="BoxBody" type="RigidBody2D" parent="."]
@@ -44,7 +44,7 @@ creatureLikes = "Apples"
 creatureDislikes = "Loud noises"
 creatureType = 1
 foodType = 2
-happiness = 3
+happiness = 5
 
 [node name="CountdownTimer" type="Timer" parent="."]
 wait_time = 3.0

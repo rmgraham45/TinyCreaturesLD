@@ -21,7 +21,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Control" type="Control" node_paths=PackedStringArray("bubbleTextureRect", "typeTextureRect", "extremeNode")]
+[node name="Control" type="Control" node_paths=PackedStringArray("bubbleTextureRect", "typeTextureRect", "extremeNode") groups=["KillOnReset"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
