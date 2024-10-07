@@ -11,6 +11,7 @@ public partial class Start : Node2D
 		SceneManager.Instance.AddControl("res://UI/MainUI.tscn");
 		SceneManager.Instance.AddControl("res://WorldScenes/SettingsUI.tscn");
 		SceneManager.Instance.AddControl("res://WorldScenes/BestiaryUI.tscn");
+		SceneManager.Instance.AddControl("res://WorldScenes/Music.tscn");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

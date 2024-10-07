@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://6kx65gycaqau"]
+
+[ext_resource type="Script" path="res://WorldScenes/Music.cs" id="1_0lm2w"]
+[ext_resource type="AudioStream" uid="uid://o36ei4xvm4o0" path="res://WorldScenes/Gameplay.wav" id="1_lf8s4"]
+
+[node name="Music" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0lm2w")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_lf8s4")
+volume_db = -23.424
+autoplay = true
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
