@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cifwybv6pwoi4"]
 
-[ext_resource type="Script" path="res://Cubes/SteelCube.cs" id="1_s676b"]
+[ext_resource type="Script" path="res://Cubes/Cube.cs" id="1_tbrxh"]
 [ext_resource type="Script" path="res://Cubes/CubePhysics.cs" id="2_11kky"]
 [ext_resource type="Texture2D" uid="uid://b0ucme60nngl6" path="res://Cubes/CubeArt/GaloshesSummerCabin.png" id="3_3cnln"]
 [ext_resource type="PackedScene" uid="uid://cnqayl16hta1k" path="res://Creature/Creature.tscn" id="4_avj05"]
@@ -8,8 +8,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gn5fa"]
 size = Vector2(575, 192)
 
-[node name="Node2D" type="Node2D"]
-script = ExtResource("1_s676b")
+[node name="Node2D2" type="Node2D"]
+script = ExtResource("1_tbrxh")
 
 [node name="BoxBody" type="RigidBody2D" parent="."]
 position = Vector2(0, 2)

@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://dw0vd7ryyiips"]
+[gd_scene load_steps=5 format=3 uid="uid://bee8urqcn08m8"]
 
 [ext_resource type="Script" path="res://UI/Camera.cs" id="1_7uhim"]
-[ext_resource type="PackedScene" uid="uid://b1cqad0t56y7f" path="res://WorldScenes/LootboxUI.tscn" id="2_e7nyv"]
+[ext_resource type="PackedScene" uid="uid://dose2wal355wc" path="res://WorldScenes/LootboxUI.tscn" id="2_e7nyv"]
 [ext_resource type="PackedScene" uid="uid://d0p3bvdsxbxq7" path="res://WorldScenes/CareUI.tscn" id="3_mpkgb"]
-[ext_resource type="PackedScene" uid="uid://c60jdmlwx0jj5" path="res://WorldScenes/BestiaryUI.tscn" id="4_xhavj"]
+[ext_resource type="PackedScene" path="res://WorldScenes/BestiaryUI.tscn" id="4_xhavj"]
 
 [node name="Control" type="Control"]
+top_level = true
 layout_mode = 3
 anchors_preset = 0
 
@@ -14,8 +15,11 @@ anchor_mode = 0
 process_callback = 0
 script = ExtResource("1_7uhim")
 
-[node name="LootboxUi" parent="Camera2D" instance=ExtResource("2_e7nyv")]
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+layer = 99
 
-[node name="CareUi" parent="Camera2D" instance=ExtResource("3_mpkgb")]
+[node name="LootboxUi" parent="Camera2D/CanvasLayer" instance=ExtResource("2_e7nyv")]
 
-[node name="BestiaryUi" parent="Camera2D" instance=ExtResource("4_xhavj")]
+[node name="CareUi" parent="Camera2D/CanvasLayer" instance=ExtResource("3_mpkgb")]
+
+[node name="BestiaryUi" parent="Camera2D/CanvasLayer" instance=ExtResource("4_xhavj")]
