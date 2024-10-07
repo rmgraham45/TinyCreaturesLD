@@ -8,8 +8,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gn5fa"]
 size = Vector2(575, 192)
 
-[node name="Node2D" type="Node2D"]
-script = ExtResource("1_5olw1")
+[node name="Node2D2" type="Node2D"]
+script = ExtResource("1_tbrxh")
 
 [node name="BoxBody" type="RigidBody2D" parent="."]
 position = Vector2(0, 2)
@@ -46,7 +46,12 @@ creatureType = 1
 foodType = 2
 happiness = 3
 
+[node name="CountdownTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
 [connection signal="MouseEntered" from="BoxBody" to="BoxBody" method="_on_mouse_entered"]
 [connection signal="MouseExited" from="BoxBody" to="BoxBody" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="BoxBody" to="." method="_on_box_body_mouse_entered"]
 [connection signal="mouse_exited" from="BoxBody" to="." method="_on_box_body_mouse_exited"]
+[connection signal="timeout" from="CountdownTimer" to="." method="_on_countdown_timer_timeout"]

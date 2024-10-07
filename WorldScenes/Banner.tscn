@@ -1,0 +1,68 @@
+[gd_scene load_steps=12 format=3 uid="uid://c0tsnct7hpabv"]
+
+[ext_resource type="Script" path="res://UI/HighScoreBanner/Banner.cs" id="1_snqum"]
+[ext_resource type="Texture2D" uid="uid://chet1dhnnydcp" path="res://UI/HighScoreBanner/banner1.png" id="2_kahrf"]
+[ext_resource type="Texture2D" uid="uid://cw2a763j8rv7i" path="res://UI/HighScoreBanner/banner2.png" id="3_uxubu"]
+[ext_resource type="Texture2D" uid="uid://choro6d8tfiyr" path="res://UI/HighScoreBanner/banner3.png" id="4_dsdwf"]
+[ext_resource type="Texture2D" uid="uid://c45a8dtx8da3r" path="res://UI/HighScoreBanner/banner4.png" id="5_sqya8"]
+[ext_resource type="Texture2D" uid="uid://b04k2okwxmpge" path="res://UI/HighScoreBanner/banner5.png" id="6_aupg7"]
+[ext_resource type="Texture2D" uid="uid://b7h6fd1cvtngu" path="res://UI/HighScoreBanner/banner6.png" id="7_hdf2t"]
+[ext_resource type="Texture2D" uid="uid://dle5mbnd2hnxk" path="res://UI/HighScoreBanner/banner7.png" id="8_ts2ub"]
+[ext_resource type="Texture2D" uid="uid://bywtviljfao5l" path="res://UI/HighScoreBanner/banner8.png" id="9_0u4uw"]
+[ext_resource type="FontFile" uid="uid://pot2as5dro5c" path="res://UI/Font/ARCADECLASSIC.TTF" id="10_lhhc0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dm2r7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kahrf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uxubu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dsdwf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sqya8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_aupg7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hdf2t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ts2ub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0u4uw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Banner" type="Node2D" node_paths=PackedStringArray("highScoreLabel")]
+script = ExtResource("1_snqum")
+offset = Vector2(0, 25)
+lerpSpeed = 0.05
+highScoreLabel = NodePath("RichTextLabel")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+scale = Vector2(3.1, 3.1)
+sprite_frames = SubResource("SpriteFrames_dm2r7")
+autoplay = "default"
+frame_progress = 0.224594
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+z_index = 2
+offset_left = 285.0
+offset_top = -26.0
+offset_right = 396.0
+offset_bottom = 14.0
+theme_override_fonts/normal_font = ExtResource("10_lhhc0")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[center]0[/center]"

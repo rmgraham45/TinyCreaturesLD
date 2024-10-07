@@ -37,7 +37,12 @@ shape = SubResource("RectangleShape2D_gn5fa")
 
 [node name="Creature" parent="BoxBody" instance=ExtResource("4_cib1c")]
 
+[node name="CountdownTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
 [connection signal="MouseEntered" from="BoxBody" to="BoxBody" method="_on_mouse_entered"]
 [connection signal="MouseExited" from="BoxBody" to="BoxBody" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="BoxBody" to="." method="_on_box_body_mouse_entered"]
 [connection signal="mouse_exited" from="BoxBody" to="." method="_on_box_body_mouse_exited"]
+[connection signal="timeout" from="CountdownTimer" to="." method="_on_countdown_timer_timeout"]

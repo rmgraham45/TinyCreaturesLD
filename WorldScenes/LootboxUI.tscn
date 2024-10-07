@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dose2wal355wc"]
+[gd_scene load_steps=4 format=3 uid="uid://b1cqad0t56y7f"]
 
 [ext_resource type="Script" path="res://UI/Lootbox/Lootbox.cs" id="1_oh6k0"]
 [ext_resource type="Texture2D" uid="uid://cpuq5ulqeap0i" path="res://UI/ui_block_base.png" id="2_2lhtp"]
@@ -11,7 +11,6 @@ offset_right = 782.0
 offset_bottom = 983.0
 mouse_filter = 2
 script = ExtResource("1_oh6k0")
-spawnTarget = Vector2(390, -200)
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
@@ -40,4 +39,9 @@ icon = ExtResource("3_aqoxb")
 icon_alignment = 1
 expand_icon = true
 
+[node name="CooldownTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="pressed" from="LootButton" to="." method="_on_loot_button_pressed"]
+[connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]
