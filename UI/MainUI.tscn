@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bee8urqcn08m8"]
+
+[ext_resource type="Script" path="res://UI/Camera.cs" id="1_7uhim"]
+[ext_resource type="PackedScene" uid="uid://dose2wal355wc" path="res://WorldScenes/LootboxUI.tscn" id="2_e7nyv"]
+[ext_resource type="PackedScene" uid="uid://d0p3bvdsxbxq7" path="res://WorldScenes/CareUI.tscn" id="3_mpkgb"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+process_callback = 0
+script = ExtResource("1_7uhim")
+
+[node name="LootboxUi" parent="Camera2D" instance=ExtResource("2_e7nyv")]
+
+[node name="CareUi" parent="Camera2D" instance=ExtResource("3_mpkgb")]
