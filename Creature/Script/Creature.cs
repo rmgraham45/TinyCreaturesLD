@@ -11,9 +11,12 @@ public partial class Creature : Node2D
 		{ CreatureType.Beemurai, "res://Creature/Scene/Beemurai.tscn"},
 	};
 
+
 	[Export]
 	public string creatureName = "ERR", creatureDescription = "ERR", creatureLikes = "ERR", creatureDislikes = "ERR";
 
+	[Export]
+	public bool floating = false;
 	[Export]
 	public CreatureType creatureType;
 	[Export]
@@ -45,17 +48,17 @@ public partial class Creature : Node2D
 		// Called every time the node is added to the scene.
 		LoadScene();
 
-		collider = GetChild<CollisionObject2D>(0);
+		collider = GetChild<CollisionObject2D>(1);
 
 		collider.InputEvent += MouseClick;
 
-		emote = GetChild<Node2D>(0).GetNode<Emote>("GPUParticles2D");
+		emote = GetChild<Node2D>(1).GetNode<Emote>("GPUParticles2D");
 
 		careModePicker = GetTree().Root.GetNode<SceneManager>("SceneManager").GetNode<CareModePicker>("Control/Camera2D/CanvasLayer/CareUi");
 	
 		cube = GetParent<RigidBody2D>().GetParent<Node2D>();
 		cubeArea = cube.GetNode<RigidBody2D>("BoxBody").GetNode<CollisionShape2D>("CollisionShape2D");
-		rb2d = GetChild<RigidBody2D>(0);
+		rb2d = GetChild<RigidBody2D>(1);
 
 		bestiary = GetTree().Root.GetNode<SceneManager>("SceneManager").GetNode<Bestiary>("Control/Camera2D/CanvasLayer/BestiaryUi");
 	}
@@ -160,6 +163,17 @@ public partial class Creature : Node2D
 		else {
 			// if not, move Creature to the center of it
 			rb2d.Position = cubeArea.Shape.GetRect().GetCenter();
+		}
+	}
+
+	private void _on_timer_timeout()
+	{
+		GD.Print("timer");
+		if (floating)
+		{
+			GD.Print("FORCE");
+			RigidBody2D floatingBody = (RigidBody2D)this.GetChild(1);
+			floatingBody.ApplyImpulse(new Vector2(80f,80f));
 		}
 	}
 }

@@ -8,8 +8,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gn5fa"]
 size = Vector2(575, 192)
 
-[node name="Node2D2" type="Node2D"]
-script = ExtResource("1_tbrxh")
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_5olw1")
 
 [node name="BoxBody" type="RigidBody2D" parent="."]
 position = Vector2(0, 2)

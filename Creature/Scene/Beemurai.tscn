@@ -48,9 +48,8 @@ scale_max = 2.0
 collision_layer = 2
 collision_mask = 2
 input_pickable = true
-mass = 0.001
 physics_material_override = SubResource("PhysicsMaterial_uvn5m")
-gravity_scale = 0.152
+gravity_scale = 0.009
 can_sleep = false
 script = ExtResource("1_q7i1o")
 

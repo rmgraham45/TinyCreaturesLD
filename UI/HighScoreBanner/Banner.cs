@@ -25,7 +25,6 @@ public partial class Banner : Node2D
 		startingPos = GlobalPosition;
 		targetPos = startingPos;
 
-		GD.Print("starting pos: " + startingPos);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -39,7 +38,6 @@ public partial class Banner : Node2D
 	{
 		Visible = true;
 
-		GD.Print("new high score! position: " + maxY);
 		targetPos = new Vector2(GlobalPosition.X, maxY) + offset;
 
 		highScoreLabel.Text = "[center]" + ConvertYToScore(maxY).ToString("0.0") + "[/center]";

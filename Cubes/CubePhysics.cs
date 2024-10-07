@@ -42,7 +42,7 @@ public partial class CubePhysics : RigidBody2D
 		grabbed = true;
 		GravityScale = 0;
 		
-		RigidBody2D creature = GetParent().GetNode<Node2D>("BoxBody").GetNode<Node2D>("Creature").GetChild<RigidBody2D>(0);
+		RigidBody2D creature = GetParent().GetNode<Node2D>("BoxBody").GetNode<Node2D>("Creature").GetChild<RigidBody2D>(1);
 		creature.SetDeferred("freeze", true);
 	}
 
@@ -80,7 +80,7 @@ public partial class CubePhysics : RigidBody2D
 		grabbed = false;
 		GravityScale = storedGravity;
 
-		RigidBody2D creature = GetParent().GetNode<Node2D>("BoxBody").GetNode<Node2D>("Creature").GetChild<RigidBody2D>(0);
+		RigidBody2D creature = GetParent().GetNode<Node2D>("BoxBody").GetNode<Node2D>("Creature").GetChild<RigidBody2D>(1);
 		creature.SetDeferred("freeze", false);
 	}
 

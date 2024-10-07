@@ -184,6 +184,7 @@ creatureName = "Beemurai"
 creatureDescription = "Peaceful"
 creatureLikes = "Pet"
 creatureDislikes = "Meat"
+floating = true
 creatureType = 2
 happiness = 5
 hungerRate = 2.0
