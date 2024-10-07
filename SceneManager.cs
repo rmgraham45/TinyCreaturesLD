@@ -12,7 +12,7 @@ public partial class SceneManager : Node
 	public Node2D AddScene(string scenePath, Vector2? spawnPosition = null, Node2D parent = null)
 	{
 		Node2D sceneToAdd = (Node2D)GD.Load<PackedScene>(scenePath).Instantiate();
-
+		
 		if (spawnPosition != null)
 		{
 			sceneToAdd.GlobalPosition = spawnPosition.Value;
@@ -33,7 +33,7 @@ public partial class SceneManager : Node
 	public void AddControl(string controlPath)
 	{
 		Control controlAdd = (Control)GD.Load<PackedScene>(controlPath).Instantiate();
-
+		
 		Instance.AddChild(controlAdd);
 	}
 

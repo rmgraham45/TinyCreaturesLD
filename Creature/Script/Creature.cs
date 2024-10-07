@@ -50,13 +50,13 @@ public partial class Creature : Node2D
 
 		emote = GetChild<Node2D>(0).GetNode<Emote>("GPUParticles2D");
 
-		careModePicker = GetTree().Root.GetNode<SceneManager>("SceneManager").GetNode<CareModePicker>("Control/Camera2D/CareUi");
+		careModePicker = GetTree().Root.GetNode<SceneManager>("SceneManager").GetNode<CareModePicker>("Control/Camera2D/CanvasLayer/CareUi");
 	
 		cube = GetParent<RigidBody2D>().GetParent<Node2D>();
 		cubeArea = cube.GetNode<RigidBody2D>("BoxBody").GetNode<CollisionShape2D>("CollisionShape2D");
 		rb2d = GetChild<RigidBody2D>(0);
 
-		bestiary = GetTree().Root.GetNode<SceneManager>("SceneManager").GetNode<Bestiary>("Control/Camera2D/BestiaryUi");
+		bestiary = GetTree().Root.GetNode<SceneManager>("SceneManager").GetNode<Bestiary>("Control/Camera2D/CanvasLayer/BestiaryUi");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
